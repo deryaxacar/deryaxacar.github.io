@@ -1,8 +1,3 @@
-/* 
------------------
-https://github.com/ardacarofficial/links-website is open source project.
------------------
-*/
 
 
 $(document).ready(function(){
