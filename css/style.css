@@ -7,7 +7,7 @@
     --font-size: 16px;
     /* You can change the background color by typing the color code. (If you do not enter a background-image image, the background-color will be active.) */
     --background-color: #000000;
-    --background-image: url("../img/wallpaper1.jpg");
+    --background-image: url("../img/wallpaperflare.com_wallpaper.jpg");
     /* You can change the frame thickness and color of the picture by typing the number of pixels and the color code. */
     --image-border-color: #1f232e;
     --image-border-px: 3px;
@@ -20,21 +20,21 @@
     /* You can change the colors of social media icons by changing the color code. */
     --svg-color: #fff;
     /* You can change the background, text color and active color of the menu by changing the color codes. */
-    --menu-background-color: #989595;
-    --menu-text-color: #000000;
+    --menu-background-color: #000000;
+    --menu-text-color: #fff;
     --menu-active-text-color: #4EBEFA;
     /* You can change the button's background, text color and active color by changing the color codes. */
-    --button-background-color: #989595;
-    --button-text-color: #000000;
+    --button-background-color: #000000;
+    --button-text-color: #fff;
     --button-text-hover-color: #4EBEFA;
     /* You can change the background, text color and active color of the text field by changing the color codes. */
-    --textarea-background-color: #989595;
+    --textarea-background-color: #000000;
     --textarea-text-color: #fff;
     --textarea-link-text-color: #4EBEFA;
     /* You can change the background, text color and active color of the footer area by changing the color codes. */
-    --footer-background-color: #989595;
+    --footer-background-color: #000000;
     --footer-text-color: #fff;
-    --footer-link-text-color: #000000;
+    --footer-link-text-color: #4ebefa;
 }
 
 /* Basis Codes */
