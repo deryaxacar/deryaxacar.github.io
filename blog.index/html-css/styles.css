@@ -1,0 +1,321 @@
+
+/* CSS Document */
+:root {
+	/* You can change the font family in the whole design here. (You need to add the font family to the codes.) */
+	--font-family: 'Inter', sans-serif;
+	/* You can change the font size here, is proportional to all texts. */
+	--font-size: 16px;
+	/* You can change the background color by typing the color code. (If you do not enter a background-image image, the background-color will be active.) */
+	--background-color: #262626;
+	--background-image: url(../img/wallpaperflare.com_wallpaper.jpg);
+	/* You can change the frame thickness and color of the picture by typing the number of pixels and the color code. */
+	--image-border-color: #000000;
+	--image-border-px: 3px;
+	/* You can change the width and size of the picture by typing the number of pixels. */
+	--image-width: 140px;
+	--image-height: 140px;
+	/* You can change the colors of the title and description section by typing the color codes. */
+	--title-color: #fff;
+	--description-color: #fff;
+	/* You can change the colors of social media icons by changing the color code. */
+	--svg-color: #fff;
+	/* You can change the background, text color and active color of the menu by changing the color codes. */
+	--menu-background-color: #000000;
+	--menu-text-color: #fff;
+	--menu-active-text-color: #4EBEFA;
+	/* You can change the button's background, text color and active color by changing the color codes. */
+	--button-background-color: #000000;
+	--button-text-color: #fff;
+	--button-text-hover-color: #4EBEFA;
+	/* You can change the background, text color and active color of the text field by changing the color codes. */
+	--textarea-background-color: #000000;
+	--textarea-text-color: #fff;
+	--textarea-link-text-color: #4EBEFA;
+	/* You can change the background, text color and active color of the footer area by changing the color codes. */
+	--footer-background-color: #000000;
+	--footer-text-color: #fff;
+	--footer-link-text-color: #4ebefa;
+}
+/*-------------------------------------------------
+GLOBALS & GENERAL CASES
+-------------------------------------------------*/
+* {
+	margin: 0;
+	padding: 0;
+}
+a {
+	text-decoration:none;
+	color:#4ebefa;
+}
+
+
+.clear {
+	clear:both;
+}
+/*-------------------------------------------------
+body sytles start
+-------------------------------------------------*/
+
+body {
+    font-family: var(--font-family) !important;
+    background-color: var(--background-color);
+    background-position: center;
+    background-repeat: no-repeat;
+    font-size: var(--font-size);
+    line-height: 1.5;
+    font-weight: 400;
+}
+.wrapper {
+	width:100%;
+	height:auto;
+	margin:0 auto;
+	text-align:left;
+	background:url(../images/top-bg.png) repeat-x;
+}
+.main_image {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+
+	color: var(--textarea-text-color);
+	background-color: var(--textarea-background-color);
+	width: 120vh;
+	padding: 20px;
+	border-radius: 3px;
+	margin-bottom: 20px;
+	border: solid #000000 2px;
+	border-color: black;
+}
+/*-------------------------------------------------
+Right Column Styles codes
+-------------------------------------------------*/
+
+
+.right-column-content-heading {
+	float: left;
+	border-bottom: 1px solid #e5e5e5;
+	width: 100%;
+	text-align: left;
+	padding-bottom: 30px;
+	clear: both;
+}
+
+	.right-column-content-heading h1 {
+		font-size: 22px;
+		color: #4EBEFA;
+		font-weight: normal;
+	}
+
+	.right-column-content-heading h2 {
+		font-size: 18px;
+		color: #3c3c3c;
+		font-weight: normal;
+	}
+
+.right-column-content-content {
+	float: left;
+	width: 800px;
+	margin-right: 30px;
+	margin-top: 20px;
+}
+/* Link Buttons Codes */
+
+.main_button {
+    color: var(--button-text-color);
+    background-color: var(--button-background-color);
+    width: 70vh;
+    border-radius: 14px;
+    margin-bottom: 13px;
+}
+
+.main_button a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1em;
+    color: var(--button-text-color);
+    min-height: 58px;
+    cursor: pointer;
+}
+
+.main_button:hover {
+    transform: scale(1.02);
+    transition: 0.10s ease;
+}
+
+.main_button a:hover {
+    color: var(--button-text-hover-color);
+    transition: 0.40s ease;
+}
+
+#btnson {
+    margin-bottom: 30px;
+
+}
+#btnson2 {
+    margin-bottom: 30px;
+}
+#btnson3 {
+    margin-bottom: 30px;
+}
+#btnson4 {
+    border:solid #fff 1px;
+    background-color: black;
+    --button-text-color: #fff;
+}
+/*-------------------------------------------------
+Logo And Menu Styles Start
+-------------------------------------------------*/
+.logo-menu-container {
+	width: 960px;
+	height: 120px;
+	margin: 0 auto;
+}
+.logo {
+	float:left;
+	width:420px;
+	height:120px;
+	text-align:left;
+	line-height:120px;
+	font-size:48px;
+	color:#e63636;
+	text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
+}
+.menu {
+	float:right;
+	width:540px;
+	height:120px;
+	margin:0 auto;
+}
+.menu ul {
+	list-style:none;
+	outline:none;
+	margin-top:38px;
+}
+.menu ul li {
+	float:left;
+	display:block;
+	width:90px;
+	height:44px;
+	line-height:44px;
+	text-align:center;
+	background:url(../images/link-devider.png) no-repeat right;
+}
+.menu ul li a {
+	color:#9a9a9a;
+}
+.menu ul li a:hover {
+	color:#ffffff;
+}
+.menu ul li a.active {
+	color:#ffffff;
+}
+.menu ul li.nobg {
+	background:none;
+}
+
+/* Menu Codes */
+
+nav ol {
+	margin-top: 3.2vw;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+
+/*-------------------------------------------------
+General Page Styles Start
+-------------------------------------------------*/
+
+.page {
+	width:920px;
+	margin:0 auto;
+
+	padding:20px;
+	overflow:auto;
+}
+
+/*-------------------------------------------------
+Copyrights Styles Start
+-------------------------------------------------*/
+
+.right-column {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+
+.main_image {
+	width: 120vw;
+}
+
+nav li {
+	color: var(--menu-text-color);
+	background-color: var(--menu-background-color);
+	list-style-type: none;
+	text-align: center;
+	border-radius: 3px;
+	margin: 0px 3px 20px;
+	padding: 12px;
+	cursor: pointer;
+	transition: 0.40s ease;
+}
+
+
+@media screen and (max-width: 1200px) {
+
+    .main_button {
+        width: 95vw;
+    }
+
+    .main_textarea {
+        width: 95vw;
+    }
+	
+		.main_image {
+		width: 80vw;
+	}
+
+	nav li {
+		color: var(--menu-text-color);
+		background-color: var(--menu-background-color);
+		list-style-type: none;
+		text-align: center;
+		border-radius: 3px;
+		margin: 0px 3px 20px;
+		padding: 20px;
+		cursor: pointer;
+		transition: 0.40s ease;
+		font-size: 40px;
+	}
+}
+
+.copyrights {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	padding: 15px;
+	background-color: var(--footer-background-color);
+	margin-top: 50px;
+
+
+}
+	.copyrights p {
+		font-size: 1em;
+		color: var(--footer-text-color);
+	}
+
+	.copyrights a {
+		font-size: 1em;
+		color: var(--footer-link-text-color);
+		text-decoration: none;
+	}
