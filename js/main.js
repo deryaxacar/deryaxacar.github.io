@@ -48,5 +48,6 @@ document.body.onload = () => {
     $("#menu-1-container").hide();
     $("#menu-2-container").show();
     $("#menu-3-container").hide();
+    $("#menu-4-container").hide();
 
 }
