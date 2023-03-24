@@ -1662,6 +1662,17 @@ input:focus{
     }
 }
 
+@media screen and (max-width: 600px)
+{
+	.resimler{
+		width: 600px;
+		height: 300px;
+	  
+	}
+	
+}
+
+
 .fh5co-blog .blog-text {
     margin-bottom: 30px;
     position: relative;
