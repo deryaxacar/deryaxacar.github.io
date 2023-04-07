@@ -321,7 +321,7 @@ main {
     transform: scale(1.02);
     transition: 0.10s ease;
 }
-
+.main_small_a_item,
 .main_button a:hover {
     color: var(--button-text-hover-color);
     transition: 0.40s ease;
