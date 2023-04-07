@@ -273,7 +273,7 @@ main {
   }
   
   .main_small_a_item + .main_small_a_item {
-    margin-left: 10px;
+    margin-left: 5px;
   }
   
   .main_small_button_item:hover,
@@ -384,6 +384,6 @@ footer a {
       }
 
       .main_small_button_item {
-        width: calc(95vw / 2 - 5px);;
+        width: calc(97vw / 2 - 5px);;
       }
 }
