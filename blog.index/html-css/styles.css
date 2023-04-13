@@ -50,8 +50,10 @@ a {
 @media screen and (max-width: 600px)
 {
 	.resimler{
-		width: 600px;
-		height: 300px;
+		
+	width: 96vw;
+	padding-right: 12px;
+	height: 25vh;
 	  
 	}
 	
