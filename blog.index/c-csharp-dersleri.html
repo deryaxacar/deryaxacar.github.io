@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html>
+<html lang="tr-TR">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>C - C# | Derya Acar</title>
+    <meta content="" name="description">
+    <meta content="HTML-CSS dersleri" name="keywords">
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="html-css/styles.css" rel="stylesheet">
+</head>
+
+<body onload="onyazilar();">
+
+    <!-- ======= Top Bar ======= -->
+    <section id="topbar" class="d-flex align-items-center">
+        <div class="container d-flex justify-content-center justify-content-md-between">
+            <div class="contact-info d-flex align-items-center">
+                <i class="bi bi-envelope-fill"></i><a href="mailto:derya41acar@gmail.com">derya41acar@gmail.com</a>
+                
+
+            </div>
+            <div class="social-links d-none d-md-block">
+
+                <a href="https://www.instagram.com/derryacr/" target="_blank" class="instagram"><i class="bi bi-instagram" title="derryacr"></i></a>
+
+            </div>
+        </div>
+    </section>
+
+    <main id="main">
+
+        <!-- ======= Breadcrumbs ======= -->
+        <section id="breadcrumbs" style="background-color: #100e0e;" class="breadcrumbs">
+            <div class="container">
+
+                <ol>
+                    <li><a href="../index.html" style="color: white">Ana Sayfa</a></li>
+                    <li><a style="color: white">C - C#</a></li>
+                </ol>
+                
+
+            </div>
+        </section><!-- End Breadcrumbs -->
+
+        <div id="fh5co-blog">
+            <div class="container">
+                <div class="row">
+
+
+                    <div class="col-lg-4 col-md-4">
+                        <div class="fh5co-blog animate-box box1">
+                            <a href="c/c-csharp-c-nedir.html"><img class="img-responsive" src="https://i.hizliresim.com/dxxe079.jpg" alt=""></a>
+                            <div class="blog-text box2">
+                                <h3><a href="c/c-csharp-c-nedir.html">C Nedir? C ile Neler Yapılabilir?</a></h3>
+                                <span class="posted_on">17.04.2023</span>
+
+                                <p class="on-yazi">
+                                    Merhaba arkadaşlar, dersimize hoşgeldiniz. Bu derste sizlere C Nedir? C ile Neler Yapılabilir? bunlardan bahsedeceğim.
+                                </p>
+                                    <a href="c/c-csharp-c-nedir.html" class="btn btn-primary">Devamını Oku</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+             
+
+    </main><!-- End #main -->
+    
+<!-- Footer Codes -->
+<footer>
+<div class="clear"></div>
+<div class="copyrights"><footer>
+    <p>
+        &copy; 2023 <a href="https://www.instagram.com/deryaxacar/">Derya Acar </a> | Telif Hakları Saklıdır.
+    </p>
+</div>
+</footer>
+
+<!-- End Footer -->
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <div id="preloader"></div>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+    <!--<script src="assets/js/kaydirma.js"></script>-->
+
+    <script>
+
+        var x = 125;//karakter sınırı
+
+        var icerikSayi = document.getElementsByClassName('box1').length;
+
+        function onyazilar() {
+
+
+            for (var i = 0; i < icerikSayi; i++) {
+                var cumle = document.querySelectorAll('.on-yazi')[i].innerHTML;
+
+                if (cumle.length > x) {
+                    cumle = cumle.substr(0, x);
+                    cumle += "...";
+
+                    document.querySelectorAll('.on-yazi')[i].innerHTML = cumle.toString();
+
+                }
+            }
+        }
+
+
+    </script>
+
+</body>
+
+</html>
+
