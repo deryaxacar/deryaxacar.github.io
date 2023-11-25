@@ -1,57 +1,15 @@
+/* Menu Active Codes */
 
-
-$(document).ready(function(){
-    $("#menu-1").click(function(){
-        $("#menu-1").css("color", "var(--menu-active-text-color)");
-        $("#menu-2").css("color", "var(--menu-text-color)");
-        $("#menu-3").css("color", "var(--menu-text-color)");
-        $("#menu-4").css("color", "var(--menu-text-color)");
-        $("#menu-1-container").show();
-        $("#menu-2-container").hide();
-        $("#menu-3-container").hide();
-        $("#menu-4-container").hide();
+let targets = document.querySelectorAll('[data-target]')
+targets.forEach(element => {
+  element.addEventListener('click', () => {
+    var target = document.querySelector(element.dataset.target)
+    targets.forEach(element2 => {
+      var target2 = document.querySelector(element2.dataset.target)
+      element2.style.color = 'var(--menu_text_color)'
+      target2.style.display = 'none'
     });
-    $("#menu-2").click(function(){
-        $("#menu-1").css("color", "var(--menu-text-color)");
-        $("#menu-2").css("color", "var(--menu-active-text-color)");
-        $("#menu-3").css("color", "var(--menu-text-color)");
-        $("#menu-4").css("color", "var(--menu-text-color)");
-        $("#menu-1-container").hide();
-        $("#menu-2-container").show();
-        $("#menu-3-container").hide();
-        $("#menu-4-container").hide();
-    });
-    $("#menu-3").click(function(){
-        $("#menu-1").css("color", "var(--menu-text-color)");
-        $("#menu-2").css("color", "var(--menu-text-color)");
-        $("#menu-3").css("color", "var(--menu-active-text-color)");
-        $("#menu-4").css("color", "var(--menu-text-color)");
-        $("#menu-1-container").hide();
-        $("#menu-2-container").hide();
-        $("#menu-3-container").show();
-        $("#menu-4-container").hide();
-    });
-    $("#menu-4").click(function () {
-        $("#menu-1").css("color", "var(--menu-text-color)");
-        $("#menu-2").css("color", "var(--menu-text-color)");
-        $("#menu-3").css("color", "var(--menu-text-color)");
-        $("#menu-4").css("color", "var(--menu-active-text-color)");
-        $("#menu-1-container").hide();
-        $("#menu-2-container").hide();
-        $("#menu-3-container").hide();
-        $("#menu-4-container").show();
-    });
-});
-
-document.body.onload = () => {
-
-    $("#menu-1").css("color", "var(--menu-text-color)");
-    $("#menu-2").css("color", "var(--menu-active-text-color)");
-    $("#menu-3").css("color", "var(--menu-text-color)");
-    $("#menu-4").css("color", "var(--menu-text-color)");
-    $("#menu-1-container").hide();
-    $("#menu-2-container").show();
-    $("#menu-3-container").hide();
-    $("#menu-4-container").hide();
-
-}
+    element.style.color = 'var(--menu_active_text_color)'
+    target.style.display= 'flex'
+  })
+})
