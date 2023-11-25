@@ -326,20 +326,6 @@ main {
     color: var(--button-text-hover-color);
     transition: 0.40s ease;
 }
-
-#btnson {
-    margin-bottom: 90px;
-
-}
-#btnson2 {
-    margin-bottom: 90px;
-}
-#btnson3 {
-    margin-bottom: 90px;
-}
-#btnson4 {
-    margin-bottom: 90px;
-}
 /* Footer Codes */
 footer {
     display:flex;
@@ -362,9 +348,8 @@ footer p {
 }
 
 footer a {
-    font-size: 1em;
+
     color: var(--footer-link-text-color);
-    text-decoration: none;
 }
 
 /* Responsive Codes beğenmedim
