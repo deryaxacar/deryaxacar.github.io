@@ -1,378 +1,194 @@
+/*
+github : https://github.com/deryaxacar/Web-Page-Links
+*/
 
-/* From the :root element you can easily change the colors of the design, its size and so on. */
 :root {
-    /* You can change the font family in the whole design here. (You need to add the font family to the codes.) */
-    --font-family: 'Inter', sans-serif;
-    /* You can change the font size here, is proportional to all texts. */
-    --font-size: 16px;
-    /* You can change the background color by typing the color code. (If you do not enter a background-image image, the background-color will be active.) */
-    --background-color: #000000;
-    --background-image: url("../img/wallpaperflare.com_wallpaper.jpg");
-    /* You can change the frame thickness and color of the picture by typing the number of pixels and the color code. */
-    --image-border-color: #1f232e;
-    --image-border-px: 3px;
-    /* You can change the width and size of the picture by typing the number of pixels. */
+    /* img */
     --image-width: 140px;
     --image-height: 140px;
-    /* You can change the colors of the title and description section by typing the color codes. */
-    --title-color: #fff;
-    --description-color: #fff;
-    /* You can change the colors of social media icons by changing the color code. */
-    --svg-color: #fff;
-    /* You can change the background, text color and active color of the menu by changing the color codes. */
-    --menu-background-color: #000000;
-    --menu-text-color: #fff;
-    --menu-active-text-color: #4EBEFA;
-    /* You can change the button's background, text color and active color by changing the color codes. */
-    --button-background-color: #000000;
-    --button-text-color: #fff;
-    --button-text-hover-color: #4EBEFA;
-    /* You can change the background, text color and active color of the text field by changing the color codes. */
-    --textarea-background-color: #000000;
-    --textarea-text-color: #fff;
-    --textarea-link-text-color: #4EBEFA;
-    /* You can change the background, text color and active color of the footer area by changing the color codes. */
-    --footer-background-color: #000000;
-    --footer-text-color: #fff;
-    --footer-link-text-color: #4ebefa;
+    /* font */
+    --font-family: Arial, sans-serif;
+    --font-size: 1em;
+    /* color */
+    --color-white: #fff;
+    --color-black: #000000;
+    --color-blue: #4ebefa;
+    /* soft color */
+    --color-soft-black: rgba(0, 0, 0, 0.6);
 }
 
-/* Basis Codes */
-
 * {
-    padding: 0;
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
+html,
 body {
-    min-height: 100vh;
-    font-family: var(--font-family) !important;
-    background-color: var(--background-color);
-    background-image: var(--background-image);
-    background-repeat: no-repeat;
-    font-size: var(--font-size);
-    line-height: 1.5;
-    font-weight: 400;
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
 }
 
-main {
+/* Video Codes*/
+.hero-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* content Codes*/
+.hero-container .content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    color: var(--color-white);
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-}
-
-#menu-2 {
-    color: var(--menu-active-text-color);
-}
-
-#menu-1,
-#menu-3 {
-    color: var(--menu-text-color);
-}
-
-#menu-1-container {
-    display: block;
-}
-
-#menu-2-container,
-#menu-3-container,
-#menu-4-container {
-    display: none;
-}
-
-#container {
-    display: flex;
-    flex-direction: column;
-    padding-top: 20px;
-    min-height: calc(100vh - 54px);
-}
-
-/* Logo, Title and Description Codes */
-
-header {
-    display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
+    text-align: center;
 }
 
-header img {
+.hero-container .content .logo {
     width: var(--image-width);
     height: var(--image-height);
-    border: var(--image-border-px) solid var(--image-border-color);
+    margin-bottom: 20px;
     border-radius: 50%;
 }
 
-header h1 {
-    color: var(--title-color);
+.hero-container .content h1 {
+    color: var(--color-white);
     font-size: 1.9em;
     font-weight: var(--font-weight);
 }
 
-header h2 {
-    color: var(--description-color);
+.hero-container .content h2 {
+    color: var(--color-blue);
+    margin-top: 7px;
     font-size: 1.5em;
     font-weight: var(--font-weight);
-    margin-bottom: 10px;
-}
-
-/* Social Media Icons Codes */
-
-.main_icon {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
-
-
-.main_icon_container {
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
-    padding-bottom: 12px;
-    padding-left: 8px;
-    padding-right: 8px;
-    
-}
-
-.main_icon svg {
-    fill: var(--svg-color);
-
-}
-
-.main_icon a {
-    text-decoration: underline;
+    margin-bottom: 6px;
 }
 
 /* Menu Codes */
-
-nav ol {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-nav li {
-    color: var(--menu-text-color);
-    background-color: var(--menu-background-color);
-    list-style-type: none;
+.hero-container nav {
     text-align: center;
-    border-radius: 3px;
-    margin: 0px 3px 20px;
-    padding: 8px;
-    cursor: pointer;
-    transition: 0.40s ease;
+    margin-top: 20px;
+    z-index: 1;
+    position: relative;
 }
 
-/* Text Area Codes */
+.hero-container nav button {
+    margin: 2px;
+    padding: 10px 15px;
+    font-size: var(--font-size);
+    cursor: pointer;
+    border: none;
+    border-radius: 0px;
+    background-color: var(--color-soft-black);
+    color: var(--color-white);
+    transition: 0.3s;
+}
 
-.main_textarea {
-    color: var(--textarea-text-color);
-    background-color: var(--textarea-background-color);
+.hero-container nav button:hover {
+    background-color: var(--color-black);
+    color: var(--color-blue);
+    transition: 0.3s;
+}
+
+/* sub buttons Codes */
+.hero-container .sub-buttons {
+    margin-top: 30px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+    position: relative;
+}
+
+/* buton Codes */
+.hero-container .sub-buttons button {
+    background-color: var(--color-soft-black);
+    color: var(--color-white);
+    border: none;
+    border-radius: 10px;
     width: 70vh;
-    text-align: center;
-    padding: 12px;
-    border-radius: 3px;
-    margin-bottom: 13px;
-}
-
-.main_textarea a {
-    font-size: 1em;
-    color: var(--textarea-link-text-color);
-    text-decoration: none;
-}
-
-.main_small_button_list {
-    display: flex;
-    flex-direction: row;
-  }
-
-.main_small_a_item {
-    margin-top: 1em;
-    text-decoration: none;
-  }
-  
-.main_small_a_item + .main_small_a_item {
-    margin-left: 10px;
-  }
-
-  .main_small_button_item:hover,
-  .main_button_item:hover {
-    color: var(--button_text_hover_color);
-    transform: scale(1.02);
-    transition: 0.10s ease;
-  }
-  
-  .main_small_button_item {
-    color: var(--button_text_color);
-    background-color: var(--button_background_color);
-    width: calc(41em / 2 - 5px);
-    border-radius: 1em;
-    min-height: 3.7em;
-    text-align: center;
+    padding: 16px;
+    font-size: var(--font-size);
+    margin: 5px;
     cursor: pointer;
-  }
-  
-
-/* Menu Container Codes */
-
-main {
-    margin-bottom: auto;
-  }
-  
-  #main_section_container_2, #main_section_container_3 {
-   display: none;
-  }
-  
-  .main_a_item {
-    margin-top: 1em;
-    text-decoration: none;
-  }
-  
-  .main_text_item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--button_text_color);
-    background-color: var(--button_background_color);
-    width: 41em;
-    margin-top: 1em;
-    padding: 0.8em;
-    border-radius: 0.3em;
-    min-height: 3.7em;
-    text-align: center;
-  }
-  
-  .main_button_item {
-    color: var(--button_text_color);
-    background-color: var(--button_background_color);
-    width: 41em;
-    border-radius: 1em;
-    min-height: 3.7em;
-    text-align: center;
-    cursor: pointer;
-  }
-  
-  .main_small_button_list {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    
-  }
-  
-  .main_small_a_item {
-    margin-top: 1em;
-    text-decoration: none;
-    color: var(--button-text-color);
-  }
-  
-  .main_small_a_item + .main_small_a_item {
-    margin-left: 5px;
-  }
-  
-  .main_small_button_item:hover,
-  .main_button_item:hover {
-    color: var(--button_text_hover_color);
-    transform: scale(1.02);
-    transition: 0.10s ease;
-  }
-  
-  .main_small_button_item {
-    
-    color: var(--button-text-color);
-    background-color: var(--button-background-color);
-    border-radius: 14px;
-    border-color: #0000;
-    margin-bottom: 10px;
-    width: calc(70vh / 2 - 2px);
-    border-radius: 1em;
-    min-height: 3.7em;
-    text-align: center;
-    
-  }
-/* Link Buttons Codes */
-
-.main_button {
-    color: var(--button-text-color);
-    background-color: var(--button-background-color);
-    width: 70vh;
-    border-radius: 14px;
-    margin-bottom: 13px;
+    transition: 0.3s;
 }
 
-.main_button a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    font-size: 1em;
-    color: var(--button-text-color);
-    min-height: 58px;
-    cursor: pointer;
+.hero-container .sub-buttons button:hover {
+    background-color: var(--color-black);
+    color: var(--color-blue);
+    transition: 0.3s;
 }
 
-.main_button:hover {
-    transform: scale(1.02);
-    transition: 0.10s ease;
+.hero-container nav .active {
+    background-color: var(--color-black);
+    color: var(--color-blue);
 }
-.main_small_a_item,
-.main_button a:hover {
-    color: var(--button-text-hover-color);
-    transition: 0.40s ease;
-}
+
 /* Footer Codes */
 footer {
-    display:flex;
-    position:fixed;
-    bottom: 0;
-    width: 100%;
-    flex-direction:row;
-    flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 1em;
-    background-color: var(--footer-background-color);
-    margin-top: 1.5em;
+    padding: 15px;
+    background-color: var(--color-black);
+    margin-top: 0px;
 }
 
 footer p {
-    font-size: 1em;
-    color: var(--footer-text-color);
+    font-size: 13px;
+    color: var(--color-white);
 }
 
 footer a {
-
-    color: var(--footer-link-text-color);
+    font-size: 13px;
+    color: var(--color-blue);
+    text-decoration: none;
 }
 
-/* Responsive Codes beğenmedim
-*/
-
-@media screen and (max-width: 600px) {
-    .main_button {
-        width: 95vw;
+/* Media Screen */
+@media (max-width: 600px) {
+    .hero-container .content .logo {
+        width: 100px;
+        height: 100px;
     }
 
-    .main_textarea {
-        width: 95vw;
+    .hero-container .content h1 {
+        font-size: 1.5em;
     }
-    .main_text_item {
-        width: 92vw;
-      }
-    
-    
-      .main_button_item {
-        width: 70vh;
-      }
 
-      .main_small_button_item {
-        width: calc(96vw / 2 - 5px);;
-      }
+    .hero-container .content h2 {
+        font-size: 1.2em;
+    }
+
+    .hero-container nav button {
+        margin: 5px 3px;
+        padding: 8px 12px;
+        font-size: 0.9em;
+    }
+
+    .hero-container .sub-buttons button {
+        width: 80vw;
+        margin: 5px 0;
+    }
+}
+
+#vanta-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
 }
