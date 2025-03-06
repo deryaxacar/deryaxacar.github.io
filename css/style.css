@@ -6,8 +6,8 @@ github : https://github.com/deryaxacar/Web-Page-Links
     /* img */
     --logo-width: 140px;
     --logo-height: 140px;
-    --img-width: 90px;
-    --img-height: 90px;
+    --img-width: 95px;
+    --img-height: 83px;
     /* font */
     --font-family: Arial, sans-serif;
     --font-size: 1em;
@@ -211,6 +211,7 @@ body {
 
 .hero-container .blog-img {
     background-size: cover;
+    background-color: var(--color-black);
     background-position: center;
     width: var(--img-width);
     height: var(--img-height);
