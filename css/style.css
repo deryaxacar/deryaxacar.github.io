@@ -29,7 +29,6 @@ github : https://github.com/deryaxacar/Web-Page-Links
     box-sizing: border-box;
 }
 
-
 body {
     font-family: Arial, sans-serif;
     height: 100%;
@@ -233,10 +232,8 @@ body {
     font-family: var(--font-family);
     text-align: left;
     padding-bottom: var(--s);
-
     background: linear-gradient(90deg, var(--c) 50%, var(--color-white-grey) 0) calc(100% - var(--_p, 0%)) / 200% 100%,
         linear-gradient(var(--c) 0 0) 0% 100% / var(--_p, 0%) var(--s) no-repeat;
-
     -webkit-background-clip: text, padding-box;
     background-clip: text, padding-box;
     transition: 0.5s;
@@ -246,7 +243,6 @@ body {
 .blog-content h4:hover {
     --_p: 99%;
 }
-
 
 .hero-container .blog-text {
     flex: 1;
@@ -280,9 +276,8 @@ body {
     align-items: center;
 }
 
-
 .blog-button:hover {
-    background-color: var(--color-black);
+    background-color: var(--color-soft-grey);
     color: var(--color-blue);
 }
 
@@ -299,7 +294,6 @@ body {
     font-size: 10px;
     color: var(--color-grey);
 }
-
 
 /* Footer Codes */
 footer {
@@ -342,7 +336,6 @@ footer a {
     .hero-container .content h2 {
         font-size: 1.2em;
     }
-
 
     .blog-content h4 {
         color: var(--color-blue);
@@ -420,5 +413,4 @@ footer a {
         font-size: 12px;
         margin-top: 6px;
     }
-
 }
