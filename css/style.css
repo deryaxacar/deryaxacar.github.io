@@ -343,6 +343,15 @@ footer a {
         font-size: 1.2em;
     }
 
+
+    .blog-content h4 {
+        color: var(--color-blue);
+        background: none;
+        -webkit-background-clip: unset;
+        background-clip: unset;
+        transition: none;
+    }
+
     .hero-container nav button {
         margin: 5px 3px;
         padding: 8px 12px;
