@@ -4,8 +4,10 @@ github : https://github.com/deryaxacar/Web-Page-Links
 
 :root {
     /* img */
-    --image-width: 140px;
-    --image-height: 140px;
+    --logo-width: 140px;
+    --logo-height: 140px;
+    --img-width: 90px;
+    --img-height: 90px;
     /* font */
     --font-family: Arial, sans-serif;
     --font-size: 1em;
@@ -14,8 +16,10 @@ github : https://github.com/deryaxacar/Web-Page-Links
     --color-white: #fff;
     --color-black: #000000;
     --color-blue: #4ebefa;
+    --color-grey: rgba(136, 136, 136, 0.5);
     /* soft color */
     --color-soft-black: rgba(0, 0, 0, 0.6);
+    --color-soft-grey: rgba(0, 0, 0, 0.2);
 }
 
 * {
@@ -61,8 +65,8 @@ body {
 }
 
 .hero-container .content .logo {
-    width: var(--image-width);
-    height: var(--image-height);
+    width: var(--logo-width);
+    height: var(--logo-height);
     margin-bottom: 20px;
     border-radius: 50%;
 }
@@ -178,7 +182,7 @@ body {
     overflow-y: auto;
     overflow-x: hidden;
     scrollbar-width: thin;
-    scrollbar-color: rgba(136, 136, 136, 0.5) rgba(0, 0, 0, 0.2);
+    scrollbar-color: var(--color-grey) var(--color-soft-grey);
     margin-bottom: 50px;
 }
 
@@ -208,14 +212,14 @@ body {
 .hero-container .blog-img {
     background-size: cover;
     background-position: center;
-    width: 90px;
-    height: 90px;
+    width: var(--img-width);
+    height: var(--img-height);
     border-radius: 8px;
 }
 
 .blog-img img {
-    width: 90px;
-    height: 90px;
+    width: var(--img-width);
+    height: var(--img-height);
     border-radius: 8px;
 }
 
@@ -245,7 +249,6 @@ body {
     width: 40%;
     height: auto;
     padding: 6px;
-    margin-top: 5px;
     font-size: 12px;
     cursor: pointer;
     transition: 0.3s;
@@ -264,6 +267,12 @@ body {
 .blog-button:hover {
     background-color: var(--color-black);
     color: var(--color-blue);
+}
+
+.time {
+    color: var(--color-grey);
+    font-size: 13px;
+    margin-top: 3px;
 }
 
 /* Footer Codes */
@@ -356,7 +365,6 @@ footer a {
         text-align: left;
         width: 100%;
         max-width: 90vw;
-        padding: 5px;
     }
 
     .des-blog {
@@ -372,7 +380,10 @@ footer a {
         padding: 10px;
     }
 
-    .blog-content h4 {
-        margin-left: 5px;
+    .time {
+        color: var(--color-grey);
+        font-size: 12px;
+        margin-top: 6px;
     }
+
 }
