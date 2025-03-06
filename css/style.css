@@ -267,6 +267,8 @@ body {
     transition: 0.3s;
     text-align: center;
     align-items: center;
+    text-decoration: none;
+    color: inherit;
 }
 
 .des-button {
