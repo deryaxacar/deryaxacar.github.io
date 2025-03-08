@@ -450,7 +450,7 @@ footer a {
     transform: rotate(90deg);
 }
 
-#menu:checked~.menu__box {
+#menu:checked~.menu-box {
     left: 0 !important;
 }
 
@@ -485,7 +485,7 @@ footer a {
     top: 8px;
 }
 
-.menu__box {
+.menu-box {
     display: block;
     position: fixed;
     top: 0;
@@ -500,7 +500,7 @@ footer a {
     transition-duration: .25s;
 }
 
-.menu__item {
+.menu-item {
     display: block;
     padding: 12px 24px;
     color: var(--color-white);
@@ -511,7 +511,7 @@ footer a {
     transition-duration: .25s;
 }
 
-.menu__item:hover {
+.menu-item:hover {
     color: var(--color-green);
     background-color: var(--color-black);
 }
@@ -614,11 +614,4 @@ footer a {
         margin-top: 6px;
     }
 
-    .menu-btn {
-        position: fixed;
-        top: 20px;
-        left: 15px;
-        width: 20px;
-        height: 20px;
-    }
 }
