@@ -53,16 +53,18 @@ body {
 main {
     display: flex;
     justify-content: center;
+    position: fixed;
     height: 100%;
     min-height: 100%;
     width: 100%;
+    z-index: -2000;
 }
 
 canvas {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: -200;
+    z-index: -2000;
 }
 
 .plate {
