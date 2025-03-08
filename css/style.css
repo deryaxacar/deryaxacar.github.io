@@ -33,6 +33,7 @@ body {
     font-family: Arial, sans-serif;
     height: 100%;
     min-height: 100vh;
+    background-color: var(--color-soft-black);
 }
 
 /* Vanta container */
@@ -404,6 +405,7 @@ footer a {
     color: var(--color-blue);
     background-color: var(--color-black);
 }
+
 
 /* Media Screen */
 @media (max-width: 600px) {
