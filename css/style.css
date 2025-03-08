@@ -36,6 +36,12 @@ body {
     background-color: var(--color-soft-black);
 }
 
+::selection {
+    background: #79ffe1;
+    color: var(--color-black);
+}
+
+
 /* Vanta container */
 #vanta-bg {
     position: fixed;
