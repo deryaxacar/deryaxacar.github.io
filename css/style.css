@@ -13,9 +13,10 @@ github : https://github.com/deryaxacar/Web-Page-Links
     --font-size: 1em;
     --blog-font-size: 14px;
     /* color */
+    --background-color: #181818;
     --color-white: #fff;
     --color-black: #000000;
-    --color-blue: #4ebefa;
+    --color-green: #79ffe1;
     --color-grey: rgba(136, 136, 136, 0.5);
     --color-white-grey: rgba(246, 246, 246, 0.362);
     /* soft color */
@@ -27,29 +28,130 @@ github : https://github.com/deryaxacar/Web-Page-Links
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-size: inherit;
+    font-weight: normal;
+    appearance: none;
+    outline: none;
+    border-radius: 0;
+    background: none;
+    border: none;
 }
 
 body {
     font-family: Arial, sans-serif;
     height: 100%;
     min-height: 100vh;
-    background-color: var(--color-soft-black);
+    background-color: var(--background-color);
 }
 
 ::selection {
-    background: #79ffe1;
+    background: var(--color-green);
     color: var(--color-black);
 }
 
+/* bacgraund */
+main {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    min-height: 100%;
+    width: 100%;
+}
 
-/* Vanta container */
-#vanta-bg {
-    position: fixed;
+canvas {
+    position: absolute;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    z-index: -200;
+}
+
+.plate {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 0;
+    text-align: center;
+    color: var(--color-white);
+    letter-spacing: 4px;
+    font-size: 0.6em;
+    line-height: 2.5;
     z-index: -1;
+}
+
+a {
+    text-decoration: none;
+    appearance: none;
+}
+
+.mouse {
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    padding: 1rem 0;
+    z-index: 2;
+    color: var(--color-grey);
+    width: 100%;
+    letter-spacing: 6px;
+    font-size: 0.45em;
+    line-height: 2.5;
+    text-transform: uppercase;
+    transition: all 0.5s ease;
+    opacity: 0;
+    transform: translateY(-15px);
+
+    &.active {
+        transform: none;
+        opacity: 1;
+    }
+}
+
+.text-animation {
+    opacity: 0;
+
+    &.active {
+        opacity: 1;
+    }
+
+    .letter {
+        opacity: 0;
+        transition: color 0.5s ease, opacity 0.3s ease;
+        transform-origin: bottom;
+        color: var(--color-white);
+
+        &.active {
+            color: var(--color-grey);
+            opacity: 1;
+            transform: none;
+            animation: color 5s ease infinite 3s;
+        }
+    }
+}
+
+@keyframes color {
+    0% {
+        color: rgba(255, 255, 255, 1);
+    }
+
+    20% {
+        color: var(--color-grey);
+    }
+
+    100% {
+        color: var(--color-grey);
+    }
+}
+
+/* about text */
+.scrambled-text {
+    font-size: var(--font-size);
+    font-family: var(--font-family);
+    white-space: pre-wrap;
+}
+
+.hidden {
+    opacity: 0;
 }
 
 /* container */
@@ -87,7 +189,7 @@ body {
 /* header 2 */
 .typewriter {
     font-size: 1.4em;
-    color: var(--color-blue);
+    color: var(--color-green);
     display: inline-block;
     white-space: nowrap;
     overflow: hidden;
@@ -103,7 +205,7 @@ body {
 
 .typewriter::after {
     content: "";
-    border-right: 3px solid var(--color-blue);
+    border-right: 3px solid var(--color-green);
     animation: blink 0.6s infinite;
 }
 
@@ -114,7 +216,7 @@ body {
     align-items: center;
 }
 
-/* Menu Codes */
+/* nav Codes */
 .hero-container nav {
     text-align: center;
     margin-top: 20px;
@@ -134,7 +236,7 @@ body {
 
 .hero-container nav button:hover {
     background-color: var(--color-black);
-    color: var(--color-blue);
+    color: var(--color-green);
     transition: 0.3s;
 }
 
@@ -162,13 +264,13 @@ body {
 
 .hero-container .sub-buttons button:hover {
     background-color: var(--color-black);
-    color: var(--color-blue);
+    color: var(--color-green);
     transition: 0.3s;
 }
 
 .hero-container nav .active {
     background-color: var(--color-black);
-    color: var(--color-blue);
+    color: var(--color-green);
 }
 
 /* textrea Codes */
@@ -233,7 +335,7 @@ body {
 
 .blog-content h4 {
     --s: 0.1em;
-    --c: var(--color-blue);
+    --c: var(--color-green);
     color: #0000;
     margin-bottom: 4px;
     font-size: var(--font-size);
@@ -288,7 +390,7 @@ body {
 
 .blog-button:hover {
     background-color: var(--color-soft-grey);
-    color: var(--color-blue);
+    color: var(--color-green);
 }
 
 .time {
@@ -323,46 +425,46 @@ footer p {
 
 footer a {
     font-size: 13px;
-    color: var(--color-blue);
+    color: var(--color-green);
     text-decoration: none;
 }
 
 /* menu codes*/
-#menu__toggle {
+#menu {
     opacity: 0;
 }
 
-#menu__toggle:checked+.menu__btn>span {
+#menu:checked+.menu-btn>span {
     transform: rotate(45deg);
 }
 
-#menu__toggle:checked+.menu__btn>span::before {
+#menu:checked+.menu-btn>span::before {
     top: 0;
     transform: rotate(0deg);
 }
 
-#menu__toggle:checked+.menu__btn>span::after {
+#menu:checked+.menu-btn>span::after {
     top: 0;
     transform: rotate(90deg);
 }
 
-#menu__toggle:checked~.menu__box {
+#menu:checked~.menu__box {
     left: 0 !important;
 }
 
-.menu__btn {
+.menu-btn {
     position: fixed;
     top: 30px;
     left: 20px;
     width: 25px;
     height: 25px;
     cursor: pointer;
-    z-index: 1;
+    z-index: 2;
 }
 
-.menu__btn>span,
-.menu__btn>span::before,
-.menu__btn>span::after {
+.menu-btn>span,
+.menu-btn>span::before,
+.menu-btn>span::after {
     display: block;
     position: absolute;
     width: 100%;
@@ -371,12 +473,12 @@ footer a {
     transition-duration: .25s;
 }
 
-.menu__btn>span::before {
+.menu-btn>span::before {
     content: '';
     top: -8px;
 }
 
-.menu__btn>span::after {
+.menu-btn>span::after {
     content: '';
     top: 8px;
 }
@@ -408,7 +510,7 @@ footer a {
 }
 
 .menu__item:hover {
-    color: var(--color-blue);
+    color: var(--color-green);
     background-color: var(--color-black);
 }
 
@@ -434,7 +536,7 @@ footer a {
     }
 
     .blog-content h4 {
-        color: var(--color-blue);
+        color: var(--color-green);
         background: none;
         -webkit-background-clip: unset;
         background-clip: unset;
@@ -510,7 +612,7 @@ footer a {
         margin-top: 6px;
     }
 
-    .menu__btn {
+    .menu-btn {
         position: fixed;
         top: 20px;
         left: 15px;
