@@ -300,7 +300,6 @@ a {
 .des-blog {
     display: flex;
     flex-direction: column;
-    width: 75%;
     overflow: hidden;
 }
 
@@ -309,7 +308,7 @@ a {
     color: var(--color-white);
     border: none;
     border-radius: 10px;
-    width: 70vh;
+    width: 80vh;
     padding: 16px;
     font-size: var(--font-size);
     margin: 5px;
