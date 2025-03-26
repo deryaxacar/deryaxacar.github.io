@@ -530,6 +530,20 @@ footer a {
     margin: 10px;
 }
 
+.details p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 1.2rem;
+}
+
+.details h2,
+h3 {
+    margin-top: 2rem;
+    color: #222;
+}
+
+
 /* Media Screen */
 @media (max-width: 600px) {
 

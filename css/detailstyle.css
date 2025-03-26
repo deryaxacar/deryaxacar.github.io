@@ -1,0 +1,147 @@
+:root {
+    --bg: #121212;
+    --text: #dddddd;
+    --accent: #79ffe1;
+    --tag-bg: #1f1f1f;
+    --tag-text: #ccc;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    padding: 0;
+}
+
+.container {
+    max-width: 768px;
+    margin: auto;
+    padding: 2rem;
+}
+
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.meta {
+    color: gray;
+    font-size: 0.9rem;
+}
+
+.featured-img {
+    width: 100%;
+    border-radius: 10px;
+    margin: 1.5rem 0;
+}
+
+h2,
+h3 {
+    margin-top: 2rem;
+    color: var(--accent);
+}
+
+blockquote {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background-color: var(--tag-bg);
+    font-style: italic;
+    color: var(--tag-text);
+}
+
+.tags {
+    margin-top: 2rem;
+}
+
+.tag {
+    display: inline-block;
+    background-color: var(--tag-bg);
+    color: var(--tag-text);
+    padding: 0.3rem 0.6rem;
+    margin: 0.3rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+/* Yeni Eklenenler Bölümü */
+.recent-posts {
+    margin-top: 4rem;
+}
+
+.recent-posts h3 {
+    color: var(--accent);
+    margin-bottom: 1rem;
+}
+
+.recent-posts ul {
+    list-style: none;
+    padding: 0;
+}
+
+.recent-posts li {
+    margin-bottom: 0.8rem;
+}
+
+.recent-posts a {
+    color: var(--text);
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+
+.recent-posts a:hover {
+    color: var(--accent);
+}
+
+.code-example {
+    margin-top: 2rem;
+}
+
+.code-example pre {
+    background-color: #1e1e1e;
+    color: #eee;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-family: 'Fira Code', monospace;
+    line-height: 1.5;
+}
+
+.code-block {
+    position: relative;
+    margin-top: 2rem;
+}
+
+.copy-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 0.4rem 0.7rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+.copy-btn:hover {
+    background-color: #555;
+}

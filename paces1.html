@@ -1,47 +1,99 @@
-<!-----
-github : https://github.com/deryaxacar/Web-Page-Links
------->
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pace | Derya Acar </title>
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="icon" href="img/deryaxacar.png" type="image/x-icon">
-
-  <!--Bootstrap-->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog Yazısı | Derya Acar</title>
+    <link rel="icon" href="img/deryaxacar.png" type="image/x-icon" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/detailstyle.css" />
 </head>
 
 <body>
-  <div class="hero-container">
-    <!--contend-->
-    <div class="details">
+    <div class="container">
+        <header>
+            <h1>Lorem ipsum dolor sit.</h1>
+            <p class="meta">Yayın: 26 Mart 2025 | Yazar: Derya Acar</p>
+            <!--<img src="https://via.placeholder.com/768x400.png?text=Blog+Görseli" alt="Blog görseli"
+                class="featured-img" />-->
+        </header>
 
-      <h1>Hi, I'm Derya Acar</h1>
-      <p>Front-End Developer</p> <br></br>
+        <section>
+            <h2>Lorem, ipsum.</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi similique exercitationem laborum enim
+                eaque accusamus harum aliquam.</p>
 
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis non expedita consequuntur cupiditate autem
-        nulla dignissimos iste adipisci voluptate in odit quam rem sunt consequatur, dolor cum veniam placeat. Libero?
-      </p>
-      <p>Nostrum aspernatur minus fugit consequuntur, necessitatibus doloribus id neque sed aut perspiciatis quasi enim
-        illo dicta dolorem tempore eligendi recusandae iure provident a ipsa aperiam sit quibusdam quae. Quasi, quas!
-      </p>
+            <h2>Lorem, ipsum.</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum odit ipsam consequatur. Est vitae
+                mollitia libero saepe.</p>
+
+            <h3>Lorem, ipsum.</h3>
+            <ul>
+                <li>Lorem, ipsum dolor.</li>
+                <li>Lorem, ipsum dolor.</li>
+                <li>Lorem, ipsum dolor.</li>
+            </ul>
+
+            <blockquote>"Lorem ipsum dolor sit amet consectetur, adipisicing elit."</blockquote>
+
+            <h2>Lorem, ipsum.</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum illo sequi earum, inventore recusandae
+                molestias perferendis aliquid!</p>
+
+            <div class="tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">Frontend</span>
+            </div>
+
+        </section>
+
+        <section class="code-example">
+            <h3>💡 Örnek Kod: JavaScript Fonksiyonu</h3>
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Kopyala</button>
+                <pre><code class="language-javascript">
+    function selamVer(isim) {
+        console.log("Merhaba, " + isim + "!");
+        }
+          
+    selamVer("Derya");
+              </code></pre>
+            </div>
+        </section>
 
 
+        <section class="recent-posts">
+            <h3>Son Eklenen Yazılar</h3>
+            <ul>
+                <li><a href="#">🔗 JavaScript'te Scope Nedir?</a></li>
+                <li><a href="#">🔗 React ile Bileşen Mantığı</a></li>
+                <li><a href="#">🔗 Tailwind CSS ile Modern Tasarım</a></li>
+                <li><a href="#">🔗 GitHub Projelerinde Etkin Takip</a></li>
+            </ul>
+        </section>
     </div>
-    <!--contend-end-->
-  </div>
 
-  <!-- Footer Codes -->
-  <footer>
-    <p> &copy; 2025 <a href="https://www.instagram.com/derryacr/">Derya Acar </a> | Copyrights Reserved. </p>
-  </footer>
+    <!-- Footer Codes -->
+    <footer>
+        <p>&copy; 2025 <a href="https://www.instagram.com/derryacr/">Derya Acar</a> | Tüm Hakları Saklıdır.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js"></script>
+    <script>
+        function copyCode(button) {
+            const code = button.nextElementSibling.innerText;
+            navigator.clipboard.writeText(code).then(() => {
+                button.innerText = "Kopyalandı!";
+                button.disabled = true;
+            });
+        }
+    </script>
+
+
 </body>
 
 </html>
