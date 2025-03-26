@@ -627,4 +627,10 @@ footer a {
         margin-top: 6px;
     }
 
+    .details {
+        margin: 5px;
+        padding: 20px;
+        padding-top: 50px;
+    }
+
 }
