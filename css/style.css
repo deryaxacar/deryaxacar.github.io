@@ -516,6 +516,19 @@ footer a {
     background-color: var(--color-black);
 }
 
+/* blog details */
+
+.details {
+    color: var(--color-white);
+    border: none;
+    border-radius: 10px;
+    width: 98vw;
+    height: 98vh;
+    padding: 50px;
+    margin-left: 5px;
+    font-size: var(--font-size);
+    margin: 10px;
+}
 
 /* Media Screen */
 @media (max-width: 600px) {
