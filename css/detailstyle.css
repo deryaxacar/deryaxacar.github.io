@@ -12,6 +12,11 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+
 body {
     margin: 0;
     font-family: var(--font-family);
@@ -85,7 +90,7 @@ strong {
 
 ul {
     list-style-type: disc;
-    margin-left: 2rem;
+    margin-left: 1rem;
 }
 
 .tags {
