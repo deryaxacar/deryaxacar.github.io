@@ -180,10 +180,11 @@ p {
     }
 
     code {
-        font-size: 0.5rem;
+        font-size: 0.6rem;
     }
 
     .copy-btn {
+        top: 5px;
         font-size: 0.5rem;
         padding: 0.3rem 0.5rem;
     }
