@@ -23,7 +23,7 @@
                 <li><a class="menu-item" href="#bellek-islemleri">Bellek İşlemleri</a></li>
                 <li><a class="menu-item" href="#dize-islemleri">Dize İşlemleri</a></li>
                 <li><a class="menu-item" href="#karakter-islemleri">Karakter İşlemleri</a></li>
-                <li><a class="menu-item" href="#liste-islemleri">Liste İşlemleri</a></li>
+                <li><a class="menu-item" href="#Notlar">Bilmen Gerekenler</a></li>
             </ul>
         </div>
         <header>
@@ -41,8 +41,11 @@
 
             <hr>
             <h2 id="bellek-islemleri">1 - Bellek İşlemleri</h2>
-            <hr>
+            <p>Bu işlevler, genellikle bellek alanının manipülasyonu ve işlenmesi gereken durumlarda kullanılır.
+                Örneğin, bir dizi içinde belirli bir değerin aranması, bellek alanının belirli bir değerle doldurulması
+                veya bellek bloklarının karşılaştırılması gibi işlemlerde bu fonksiyonlara ihtiyaç duyulur.</p>
 
+            <hr>
             <!-- ft_memset -->
             <ul>
                 <li>
@@ -321,6 +324,10 @@
                 değerlerinin farkını döner. Eğer bloklar tamamen aynıysa 0 döner.</p>
             <hr>
             <h2 id="dize-islemleri">2 - Dize İşlemleri</h2>
+            <p>Dize işlemleri, metinsel verilerin manipülasyonu ve işlenmesi için kullanılan işlevlerdir. Bu işlevler,
+                bir dizenin uzunluğunu hesaplamak, başka bir dizeye kopyalamak, bir dizeye yeni karakterler eklemek,
+                belirli bir karakteri bir dizide aramak, alt dize aramak veya iki dizeyi karşılaştırmak gibi çeşitli
+                işlemleri gerçekleştirir.</p>
             <hr>
 
             <!-- ft_strlen -->
@@ -395,7 +402,7 @@
                   </code></pre>
                 </div>
             </section>
-
+            <!-- des-->
             <p><strong>Açıklama:</strong> ft_strlcpy, bir diziyi başka bir diziye güvenli bir şekilde kopyalar.
                 Kopyalama işlemi sırasında hedef dizinin boyutunu kontrol eder ve taşmayı önler. Eğer hedef dizi
                 yeterince büyük değilse, kopyalama işlemi tamamlanmaz ve sonuna null terminatör eklenir.</p>
@@ -445,9 +452,1006 @@
                   </code></pre>
                 </div>
             </section>
+            <!-- des-->
             <p><strong>Açıklama:</strong> ft_strlcat, bir diziyi başka bir diziye güvenli bir şekilde ekler. Eklenen
                 dizinin boyutunu kontrol eder ve taşmayı önler. Eğer hedef dizi yeterince büyük değilse, ekleme
                 işlemi tamamlanmaz ve sonuna null terminatör eklenir.</p>
+            <hr>
+
+            <!-- ft_strchr -->
+            <ul>
+                <li>
+                    <strong>ft_strchr</strong>: Bir karakteri bir dizide arar.
+                    <ul>
+                        <li><strong>Prototype:</strong> <code>char *ft_strchr(const char *s, int c);</code></li>
+                        <li><code>s</code>: Arama yapılacak dizi.</li>
+                        <li><code>c</code>: Aranan karakter.</li>
+                        <li><strong>Dönüş Değeri:</strong> Aranan karakterin adresi (s içinde), eğer karakter
+                            bulunamazsa NULL işareti.</li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- code -->
+            <section class="code-example">
+                <h3>💡 Örnek Kod:</h3>
+                <div class="code-block">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopyala</button>
+                    <pre><code>
+    char	*ft_strchr(const char *s, int c)
+    {
+        while ((char)c != *s)
+        {
+            if (*s == 0)
+                return (0);
+            s++;
+        }
+        return ((char *)s);
+    }
+                  </code></pre>
+                </div>
+            </section>
+            <!-- des-->
+            <p><strong>Açıklama:</strong> ft_strchr, bir dizide belirli bir karakteri arar ve bulursa o karakterin
+                adresini döner. Eğer karakter bulunamazsa NULL döner.</p>
+            <hr>
+
+            <!-- ft_strrchr -->
+            <ul>
+                <li>
+                    <strong>ft_strrchr</strong>: Bir karakteri bir dizide sondan arar.
+                    <ul>
+                        <li><strong>Prototype:</strong> <code>char *ft_strrchr(const char *s, int c);</code></li>
+                        <li><code>s</code>: Arama yapılacak dizi.</li>
+                        <li><code>c</code>: Aranan karakter.</li>
+                        <li><strong>Dönüş Değeri:</strong> Aranan karakterin sondan bulunduğu adres (s içinde), eğer
+                            karakter bulunamazsa NULL işareti.</li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- code -->
+            <section class="code-example">
+                <h3>💡 Örnek Kod:</h3>
+                <div class="code-block">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopyala</button>
+                    <pre><code>
+    char	*ft_strrchr(const char *s, int c)
+    {
+        int		i;
+    
+        i = ft_strlen(s);
+        while (i >= 0)
+        {
+            if (s[i] == (unsigned char)c)
+                return ((char *)s + i);
+            i--;
+        }
+        return (NULL);
+    }
+                  </code></pre>
+                </div>
+            </section>
+            <!-- des-->
+            <p><strong>Açıklama:</strong> ft_strrchr, bir dizide belirli bir karakteri sondan arar ve bulursa o
+                karakterin adresini döner. Eğer karakter bulunamazsa NULL döner.</p>
+            <hr>
+
+            <!-- ft_strnstr -->
+            <ul>
+                <li>
+                    <strong>ft_strnstr</strong>: Bir alt dizenin bir dizideki pozisyonunu bulur.
+                    <ul>
+                        <li><strong>Prototype:</strong> <code>char *ft_strnstr(const char *haystack, const char *needle,
+                                size_t len);</code></li>
+                        <li><code>haystack</code>: Arama yapılacak dizi.</li>
+                        <li><code>needle</code>: Aranan alt dizi.</li>
+                        <li><code>len</code>: Arama yapılacak maksimum karakter sayısı.</li>
+                        <li><strong>Dönüş Değeri:</strong> Alt dizenin bulunduğu adres (haystack içinde), eğer alt dize
+                            bulunamazsa NULL işareti.</li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- code -->
+            <section class="code-example">
+                <h3>💡 Örnek Kod:</h3>
+                <div class="code-block">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopyala</button>
+                    <pre><code>
+    char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+    {
+        const char	*h;
+        const char	*n;
+        size_t		counter;
+    
+        if (!needle[0])
+            return ((char *)haystack);
+        while (*haystack && len > 0)
+        {
+            h = haystack;
+            n = needle;
+            counter = 0;
+            while (n[counter] == h[counter] && n[counter] && len - counter > 0)
+                counter++;
+            if (n[counter] == '\0')
+                return ((char *) haystack);
+            len--;
+            haystack++;
+        }
+        return (NULL);
+    }
+                  </code></pre>
+                </div>
+            </section>
+            <!-- des-->
+            <p><strong>Açıklama:</strong> ft_strnstr, bir alt dizenin bir dizideki pozisyonunu bulur. Eğer alt dize
+                bulunamazsa NULL döner. Arama işlemi sırasında maksimum karakter sayısını kontrol eder.</p>
+            <hr>
+
+            <!-- ft_strncmp -->
+            <ul>
+                <li>
+                    <strong>ft_strncmp</strong>: İki dizeyi belirli bir sayıda karakterle karşılaştırır.
+                    <ul>
+                        <li><strong>Prototype:</strong>
+                            <code>int ft_strncmp(const char *s1, const char *s2, size_t n);</code>
+                        </li>
+                        <li><code>s1</code>: Karşılaştırılacak ilk dizi.</li>
+                        <li><code>s2</code>: Karşılaştırılacak ikinci dizi.</li>
+                        <li><code>n</code>: Karşılaştırma yapılacak maksimum karakter sayısı.</li>
+                        <li><strong>Dönüş Değeri:</strong> Karşılaştırma sonucu, 0 (eşit), negatif (s1 < s2), pozitif
+                                (s1>
+                                s2).</li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- code -->
+            <section class="code-example">
+                <h3>💡 Örnek Kod:</h3>
+                <div class="code-block">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopyala</button>
+                    <pre><code>
+    int	ft_strncmp(const char *s1, const char *s2, size_t size)
+    {
+        size_t	i;
+    
+        i = 0;
+        while (i < size && (s1[i] != '\0' || s2[i] != '\0'))
+        {
+            if (s1[i] != s2[i])
+                return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+            i++;
+        }
+        return (0);
+    }
+                    </code></pre>
+                </div>
+            </section>
+            <!-- des-->
+            <p><strong>Açıklama:</strong> ft_strncmp, iki dizeyi belirli bir sayıda karakterle karşılaştırır. Eğer
+                dizeler eşitse 0 döner, eğer farklıysa ilk farklı karakterlerin ASCII değerlerinin farkını döner.</p>
+            <hr>
+
+            <!-- ft_atoi -->
+            <ul>
+                <li>
+                    <strong>ft_atoi</strong>: Bir diziyi bir tam sayıya dönüştürür.
+                    <ul>
+                        <li><strong>Prototype:</strong> <code>int ft_atoi(const char *str);</code></li>
+                        <li><code>str</code>: Dönüştürülecek dizi.</li>
+                        <li><strong>Dönüş Değeri:</strong> Dönüştürülen tam sayı değeri.</li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- code -->
+            <section class="code-example">
+                <h3>💡 Örnek Kod:</h3>
+                <div class="code-block">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopyala</button>
+                    <pre><code>
+    int	ft_atoi(const char *str)
+    {
+        int	i;
+        int	sign;
+        int	container;
+    
+        i = 0;
+        sign = 1;
+        container = 0;
+        while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
+            i++;
+        if (str[i] == '-' || str[i] == '+')
+        {
+            if (str[i] == '-')
+                sign *= -1;
+            i++;
+        }
+        while (str[i])
+        {
+            if (!(ft_isdigit(str[i])))
+                return (container * sign);
+            else
+                container = container * 10 + (const char ) str[i] - 48;
+            i++;
+        }
+        return (container * sign);
+    }
+                    </code></pre>
+                </div>
+            </section>
+            <!-- des-->
+            <p><strong>Açıklama:</strong> ft_atoi, bir diziyi bir tam sayıya dönüştürür. Dönüştürme işlemi sırasında
+                boşlukları ve işaretleri (pozitif/negatif) dikkate alır. Eğer dizi geçerli bir tam sayı değilse, en
+                yakın geçerli değeri döner.</p>
+            <hr>
+
+            <!-- ft_itoa -->
+            <ul>
+                <li>
+                    <strong>ft_itoa</strong>: Bir tam sayıyı bir diziye dönüştürür.
+                    <ul>
+                        <li><strong>Prototype:</strong> <code>char *ft_itoa(int n);</code></li>
+                        <li><code>n</code>: Dönüştürülecek tam sayı..</li>
+                        <li><strong>Dönüş Değeri:</strong> Dönüştürülen tam sayıyı içeren bir dizgi.</li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- code -->
+            <section class="code-example">
+                <h3>💡 Örnek Kod:</h3>
+                <div class="code-block">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopyala</button>
+                    <pre><code>
+    static int	ft_string_leng(int num)
+    {
+        int	i;
+    
+        if (num == 0)
+            return (1);
+        i = 0;
+        while (num > 0 || num < 0)
+        {
+            num /= 10;
+            i++;
+        }
+        return (i);
+    }
+    
+    char	*ft_itoa(int n)
+    {
+        int		len;
+        char	*str;
+        long	nbr;
+    
+        nbr = n;
+        len = ft_string_leng(nbr);
+        if (n < 0)
+        {
+            len++;
+            nbr *= -1;
+        }
+        str = malloc(sizeof(char) * len + 1);
+        if (!str)
+            return (NULL);
+        str[len] = '\0';
+        while (nbr > 0)
+        {
+            str[--len] = (nbr % 10) + 48;
+            nbr /= 10;
+        }
+        if (n < 0)
+            str[0] = '-';
+        if (n == 0)
+            str[0] = '0';
+        return (str);
+    }
+                        </code></pre>
+                </div>
+            </section>
+            <!-- des-->
+            <p><strong>Açıklama:</strong> ft_itoa, bir tam sayıyı bir diziye dönüştürür. Dönüştürme işlemi sırasında
+                negatif işaretini ve null terminatörü dikkate alır. Eğer dizi geçerli bir tam sayı değilse, NULL döner.
+            </p>
+            <hr>
+
+            <!-- ft_strdup -->
+            <ul>
+                <li>
+                    <strong>ft_strdup</strong>: Bir dizinin kopyasını yapar.
+                    <ul>
+                        <li><strong>Prototype:</strong> <code>char *ft_strdup(const char *s);</code></li>
+                        <li><code>s</code>: Kopyalanacak dizi.</li>
+                        <li><strong>Dönüş Değeri:</strong> Yeni oluşturulan dizinin adresi.</li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- code -->
+            <section class="code-example">
+                <h3>💡 Örnek Kod:</h3>
+                <div class="code-block">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopyala</button>
+                    <pre><code>
+    char	*ft_strdup(const char *s)
+    {
+        char	*str;
+        size_t	leng;
+        size_t	i;
+    
+        leng = ft_strlen(s);
+        str = (char *)malloc(sizeof(char) * (leng + 1));
+        if (!(str))
+            return (NULL);
+        i = 0;
+        while (s[i] != '\0')
+        {
+            str[i] = s[i];
+            i++;
+        }
+        str[i] = '\0';
+        return (str);
+    }
+                    </code></pre>
+                </div>
+            </section>
+            <!-- des-->
+            <p><strong>Açıklama:</strong> ft_strdup, bir dizinin kopyasını yapar. Kopyalama işlemi sırasında yeni
+                dizinin boyutunu kontrol eder ve taşmayı önler. Eğer dizi yeterince büyük değilse, NULL döner.</p>
+            <hr>
+
+            <!-- ft_striteri -->
+            <ul>
+                <li>
+                    <strong>ft_striteri</strong>: Bir dizenin her karakteri üzerinde belirtilen işlemi gerçekleştirir.
+                    <ul>
+                        <li><strong>Prototype:</strong>
+                            <code>void ft_striteri(char *s, void (*f)(unsigned int, char*));</code>
+                        </li>
+                        <li><code>s</code>: İşlem yapılacak dize.</li>
+                        <li><code>f</code>: Her karakter üzerinde çağrılacak işlev.</li>
+                        <li><strong>Dönüş Değeri:</strong> Yok (void). Sadece işlemi gerçekleştirir.</li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- code -->
+            <section class="code-example">
+                <h3>💡 Örnek Kod:</h3>
+                <div class="code-block">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopyala</button>
+                    <pre><code>
+    void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+    {
+        unsigned int	i;
+    
+        i = 0;
+        while (s[i])
+        {
+            f(i, &s[i]);
+            i++;
+        }
+        return ;
+    }
+                    </code></pre>
+                </div>
+            </section>
+            <!-- des-->
+            <p><strong>Açıklama:</strong> ft_striteri, bir dizenin her karakteri üzerinde belirtilen işlemi
+                gerçekleştirir. İşlem sırasında her karakterin adresini ve indeksini işlevin parametreleri olarak
+                geçirir.</p>
+            <hr>
+
+            <!-- ft_strjoin -->
+            <ul>
+                <li>
+                    <strong>ft_strjoin</strong>: İki diziyi birleştirir.
+                    <ul>
+                        <li><strong>Prototype:</strong> <code>char *ft_strjoin(const char *s1, const char *s2);</code>
+                        </li>
+                        <li><code>s1</code>: Birleştirilecek ilk dizi.</li>
+                        <li><code>s2</code>: Birleştirilecek ikinci dizi.</li>
+                        <li><strong>Dönüş Değeri:</strong> Yeni oluşturulan birleştirilmiş dizi.</li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- code -->
+            <section class="code-example">
+                <h3>💡 Örnek Kod:</h3>
+                <div class="code-block">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopyala</button>
+                    <pre><code>
+    char	*ft_strjoin(char const *s1, char const *s2)
+    {
+        char			*str;
+        unsigned int	leng;
+        unsigned int	i;
+    
+        i = 0;
+        if (!s1 || !s2)
+            return (NULL);
+        leng = ft_strlen(s1) + ft_strlen(s2);
+        str = malloc(sizeof(char) * (leng + 1));
+        if (!str)
+            return (NULL);
+        while (*s1)
+        {
+            str[i] = *s1++;
+            i++;
+        }
+        while (*s2)
+        {
+            str[i] = *s2++;
+            i++;
+        }
+        str[i] = '\0';
+        return (str);
+    }
+                    </code></pre>
+                </div>
+            </section>
+            <!-- des-->
+            <p><strong>Açıklama:</strong> ft_strjoin, iki diziyi birleştirir ve yeni bir dizi oluşturur. Birleştirme
+                işlemi sırasında yeni dizinin boyutunu kontrol eder ve taşmayı önler. Eğer dizi yeterince büyük değilse,
+                NULL döner.</p>
+            <hr>
+
+            <!-- ft_strmapi -->
+            <ul>
+                <li>
+                    <strong>ft_strmapi</strong>: Bir dizenin her karakteri üzerinde belirtilen işlemi gerçekleştirir.
+                    <ul>
+                        <li><strong>Prototype:</strong> <code>char *ft_strmapi(const char *s, char (*f)(unsigned int,
+                                char));</code></li>
+                        <li><code>s</code>: İşlem yapılacak dize.</li>
+                        <li><code>f</code>: Her karakter üzerinde çağrılacak işlev.</li>
+                        <li><strong>Dönüş Değeri:</strong> Yeni oluşturulan dizi.</li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- code -->
+            <section class="code-example">
+                <h3>💡 Örnek Kod:</h3>
+                <div class="code-block">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopyala</button>
+                    <pre><code>
+    char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+    {
+        char			*str;
+        unsigned int	i;
+    
+        if (!s)
+            return (NULL);
+        str = (char *)malloc(ft_strlen(s) + 1);
+        if (!str)
+            return (NULL);
+        i = 0;
+        while (s[i] != '\0')
+        {
+            str[i] = f(i, s[i]);
+            i++;
+        }
+        str[i] = '\0';
+        return (str);
+    }
+                    </code></pre>
+                </div>
+            </section>
+            <!-- des-->
+            <p><strong>Açıklama:</strong> ft_strmapi, bir dizenin her karakteri üzerinde belirtilen işlemi
+                gerçekleştirir ve yeni bir dizi oluşturur. İşlem sırasında her karakterin adresini ve indeksini işlevin
+                parametreleri olarak geçirir.</p>
+            <hr>
+
+            <!-- ft_strtrim -->
+            <ul>
+                <li>
+                    <strong>ft_strtrim</strong>: Bir dizenin başındaki ve sonundaki belirli karakterleri kaldırır.
+                    <ul>
+                        <li><strong>Prototype:</strong> <code>char *ft_strtrim(const char *s1, const char *set);</code>
+                        </li>
+                        <li><code>s1</code>: İşlem yapılacak dize.</li>
+                        <li><code>set</code>: Kaldırılacak karakter kümesi.</li>
+                        <li><strong>Dönüş Değeri:</strong> Yeni oluşturulan düzeltilmiş dizi.</li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- code -->
+            <section class="code-example">
+                <h3>💡 Örnek Kod:</h3>
+                <div class="code-block">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopyala</button>
+                    <pre><code>
+    static int	ft_checkset(char c, char const *set)
+    {
+        size_t	i;
+    
+        i = 0;
+        while (set[i])
+        {
+            if (set[i++] == c)
+                return (1);
+        }
+        return (0);
+    }
+    
+    char	*ft_strtrim(char const *s1, char const *set)
+    {
+        char	*m;
+        size_t	start;
+        size_t	end;
+        size_t	i;
+    
+        if (!s1 || !set)
+            return (NULL);
+        start = 0;
+        end = ft_strlen(s1);
+        while (s1[start] && ft_checkset(s1[start], set))
+            start++;
+        while (end > start && ft_checkset(s1[end - 1], set))
+            end--;
+        m = (char *)malloc(sizeof(char) * (end - start) + 1);
+        if (!m)
+            return (NULL);
+        i = 0;
+        while (start < end)
+            m[i++] = s1[start++];
+        m[i] = '\0';
+        return (m);
+    }
+                    </code></pre>
+                </div>
+            </section>
+            <!-- des-->
+            <p><strong>Açıklama:</strong> ft_strtrim, bir dizenin başındaki ve sonundaki belirli karakterleri
+                kaldırır. Kaldırma işlemi sırasında yeni dizinin boyutunu kontrol eder ve taşmayı önler. Eğer dizi
+                yeterince büyük değilse, NULL döner.</p>
+            <hr>
+
+            <!-- ft_split -->
+            <ul>
+                <li>
+                    <strong>ft_split</strong>: Belirtilen ayırıcı karaktere göre bir dizeyi bölüp bir dize dizisi
+                    oluşturur.
+                    <ul>
+                        <li><strong>Prototype:</strong> <code>char **ft_split(char const *s, char c);</code></li>
+                        <li><code>s</code>: Bölünecek dize.</li>
+                        <li><code>c</code>: Ayırıcı karakter.</li>
+                        <li><strong>Dönüş Değeri:</strong> Oluşturulan dize dizisinin adresini içeren bir işaretçi.</li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- code -->
+            <section class="code-example">
+                <h3>💡 Örnek Kod:</h3>
+                <div class="code-block">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopyala</button>
+                    <pre><code>
+    static unsigned int	ft_word_counter(const char *s, char control)
+    {
+        unsigned int	word;
+    
+        word = 0;
+        while (*s)
+        {
+            if (*s == control)
+                s++;
+            else
+            {
+                while (*s != control && *s)
+                    s++;
+                word++;
+            }
+        }
+        return (word);
+    }
+    
+    static unsigned int	ft_charlen(const char *s, char c)
+    {
+        unsigned int	i;
+    
+        i = 0;
+        while (s[i] && s[i] != c)
+            i++;
+        return (i);
+    }
+    
+    char	**free_all(char **result)
+    {
+        int	i;
+    
+        i = 0;
+        while (result[i])
+        {
+            free(result[i]);
+            i++;
+        }
+        free(result);
+        return (NULL);
+    }
+    
+    char	**ft_split(char const *s, char c)
+    {
+        char			**arr;
+        unsigned int	j;
+        unsigned int	a;
+                        
+        arr = (char **)malloc((ft_word_counter(s, c) + 1) * sizeof(char *));
+        if (!arr)
+            return (NULL);
+        a = -1;
+        while (*s)
+        {
+            while (*s == c)
+                s++;
+            if (*s)
+            {
+                arr[++a] = (char *)malloc((ft_charlen(s, c) + 1) * sizeof(char));
+                if (!arr[a])
+                    return (free_all(arr));
+                j = 0;
+                while (*s && *s != c)
+                    arr[a][j++] = *s++;
+                arr[a][j] = '\0';
+                }
+            }
+        arr[++a] = NULL;
+        return (arr);
+    }
+                        </code></pre>
+                </div>
+            </section>
+            <!-- des-->
+            <p><strong>Açıklama:</strong> ft_split, belirtilen ayırıcı karaktere göre bir dizeyi bölüp bir dize
+                dizisi oluşturur. Bölme işlemi sırasında yeni dizinin boyutunu kontrol eder ve taşmayı önler. Eğer dizi
+                yeterince büyük değilse, NULL döner.</p>
+            <hr>
+
+            <!-- ft_tolower -->
+            <ul>
+                <li>
+                    <strong>ft_tolower</strong>: Bir karakteri küçük harfe dönüştürür.
+                    <ul>
+                        <li><strong>Prototype:</strong> <code>int ft_tolower(int c);</code></li>
+                        <li><code>c</code>: Dönüştürülecek karakterin ASCII değeri.</li>
+                        <li><strong>Dönüş Değeri:</strong> Dönüştürülmüş karakterin ASCII değeri.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <!-- code -->
+            <section class="code-example">
+                <h3>💡 Örnek Kod:</h3>
+                <div class="code-block">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopyala</button>
+                    <pre><code>
+    int	ft_tolower(int c)
+    {
+        if (c >= 65 && c <= 90)
+            return (c + 32);
+        return (c);
+    }
+                    </code></pre>
+                </div>
+            </section>
+            <!-- des-->
+            <p><strong>Açıklama:</strong> ft_tolower, bir karakteri küçük harfe dönüştürür. Dönüştürme işlemi
+                sırasında karakterin ASCII değerini kontrol eder ve büyük harf ise küçük harfe dönüştürür.</p>
+            <hr>
+
+            <!-- ft_toupper -->
+            <ul>
+                <li>
+                    <strong>ft_toupper</strong>: Bir karakteri büyük harfe dönüştürür.
+                    <ul>
+                        <li><strong>Prototype:</strong> <code>int ft_toupper(int c);</code></li>
+                        <li><code>c</code>: Dönüştürülecek karakterin ASCII değeri.</li>
+                        <li><strong>Dönüş Değeri:</strong> Dönüştürülmüş karakterin ASCII değeri.</li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- code -->
+            <section class="code-example">
+                <h3>💡 Örnek Kod:</h3>
+                <div class="code-block">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopyala</button>
+                    <pre><code>
+    int	ft_toupper(int c)
+    {
+        if (c >= 'a' && c <= 'z')
+            return (c - 32);
+        return (c);
+    }
+                    </code></pre>
+                </div>
+            </section>
+            <!-- des-->
+            <p><strong>Açıklama:</strong> ft_toupper, bir karakteri büyük harfe dönüştürür. Dönüştürme işlemi
+                sırasında karakterin ASCII değerini kontrol eder ve küçük harf ise büyük harfe dönüştürür.</p>
+
+            <hr>
+            <h2 id="karakter-islemleri">3 - Karakter İşlemleri</h2>
+            <p>Karakter işlemleri, genellikle bir karakterin belirli bir özelliğe sahip olup olmadığını kontrol etmek
+                için kullanılan işlemlerdir. Örneğin, bir karakterin bir harf olup olmadığını, bir rakam olup
+                olmadığını, bir yazdırılabilir karakter olup olmadığını veya bir ASCII karakteri olup olmadığını
+                belirlemek gibi işlemleri içerir. Bu tür işlemler, genellikle karakter dizilerini veya kullanıcıdan
+                alınan girdileri işlerken karakterlerin özelliklerini kontrol etmek için kullanılır.</p>
+            <hr>
+
+            <!-- ft_isalnum -->
+            <ul>
+                <li>
+                    <strong>ft_isalnum</strong>: Bir karakterin alfasayısal veya sayısal olup olmadığını kontrol eder.
+                    <ul>
+                        <li><strong>Prototype:</strong> <code>int ft_isalnum(int c);</code></li>
+                        <li><code>c</code>: Kontrol edilecek karakterin ASCII değeri.</li>
+                        <li><strong>Dönüş Değeri:</strong> Eğer karakter alfasayısal veya sayısal ise 1; aksi halde 0
+                            döner.</li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- code -->
+            <section class="code-example">
+                <h3>💡 Örnek Kod:</h3>
+                <div class="code-block">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopyala</button>
+                    <pre><code>
+    int	ft_isalnum(int c)
+    {
+        return (ft_isalpha(c) || ft_isdigit(c));
+    }
+                    </code></pre>
+                </div>
+            </section>
+            <!-- des-->
+            <p><strong>Açıklama:</strong> ft_isalnum, bir karakterin alfasayısal veya sayısal olup olmadığını kontrol
+                eder. Eğer karakter alfasayısal veya sayısal ise 1; aksi halde 0 döner.</p>
+            <hr>
+
+
+            <!-- ft_isalpha -->
+            <ul>
+                <li>
+                    <strong>ft_isalpha</strong>: Bir karakterin alfasayısal olup olmadığını kontrol eder.
+                    <ul>
+                        <li><strong>Prototype:</strong> <code>int ft_isalpha(int c);</code></li>
+                        <li><code>c</code>: Kontrol edilecek karakterin ASCII değeri.</li>
+                        <li><strong>Dönüş Değeri:</strong> Eğer karakter alfasayısal ise 1; aksi halde 0 döner.</li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- code -->
+            <section class="code-example">
+                <h3>💡 Örnek Kod:</h3>
+                <div class="code-block">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopyala</button>
+                    <pre><code>
+    int	ft_isalpha(int c)
+    {
+        return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
+    }
+                    </code></pre>
+                </div>
+            </section>
+            <!-- des-->
+            <p><strong>Açıklama:</strong> ft_isalpha, bir karakterin alfasayısal olup olmadığını kontrol eder. Eğer
+                karakter alfasayısal ise 1; aksi halde 0 döner.</p>
+            <hr>
+
+            <!-- ft_isascii -->
+            <ul>
+                <li>
+                    <strong>ft_isascii</strong>: Bir karakterin standart ASCII karakteri olup olmadığını kontrol eder.
+                    <ul>
+                        <li><strong>Prototype:</strong> <code>int ft_isascii(int c);</code></li>
+                        <li><code>c</code>: Kontrol edilecek karakterin ASCII değeri.</li>
+                        <li><strong>Dönüş Değeri:</strong> Eğer karakter standart ASCII ise 1; aksi halde 0 döner.</li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- code -->
+            <section class="code-example">
+                <h3>💡 Örnek Kod:</h3>
+                <div class="code-block">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopyala</button>
+                    <pre><code>
+    int	ft_isascii(int c)
+    {
+        return (c >= 0 && c < 128);
+    }
+        </code></pre>
+                </div>
+            </section>
+            <!-- des-->
+            <p><strong>Açıklama:</strong> ft_isascii, bir karakterin standart ASCII karakteri olup olmadığını kontrol
+                eder. Eğer karakter standart ASCII ise 1; aksi halde 0 döner.</p>
+            <hr>
+
+            <!-- ft_isdigit -->
+            <ul>
+                <li>
+                    <strong>ft_isdigit</strong>: Bir karakterin bir rakam karakteri olup olmadığını kontrol eder.
+                    <ul>
+                        <li><strong>Prototype:</strong> <code>int ft_isdigit(int c);</code></li>
+                        <li><code>c</code>: Kontrol edilecek karakterin ASCII değeri.</li>
+                        <li><strong>Dönüş Değeri:</strong> Eğer karakter bir rakam ise 1; aksi halde 0 döner.</li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- code -->
+            <section class="code-example">
+                <h3>💡 Örnek Kod:</h3>
+                <div class="code-block">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopyala</button>
+                    <pre><code>
+    int	ft_isdigit(int c)
+    {
+        return (c <= '9' && c >= '0');
+    }
+                    </code></pre>
+                </div>
+            </section>
+            <!-- des-->
+            <p><strong>Açıklama:</strong> ft_isdigit, bir karakterin bir rakam karakteri olup olmadığını kontrol eder.
+                Eğer karakter bir rakam ise 1; aksi halde 0 döner.</p>
+            <hr>
+
+            <!-- ft_isprint -->
+            <ul>
+                <li>
+                    <strong>ft_isprint</strong>: Bir karakterin yazdırılabilir bir karakter olup olmadığını
+                    kontrol eder.
+                    <ul>
+                        <li><strong>Prototype:</strong> <code>int ft_isprint(int c);</code></li>
+                        <li><code>c</code>: Kontrol edilecek karakterin ASCII değeri.</li>
+                        <li><strong>Dönüş Değeri:</strong> Eğer karakter yazdırılabilir ise 1; aksi halde 0 döner.</li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- code -->
+            <section class="code-example">
+                <h3>💡 Örnek Kod:</h3>
+                <div class="code-block">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopyala</button>
+                    <pre><code>
+                int	ft_isdigit(int c)
+                {
+                    return (c <= '9' && c >= '0');
+                }
+                                </code></pre>
+                </div>
+            </section>
+            <!-- des-->
+            <p><strong>Açıklama:</strong> ft_isprint, verilen bir karakterin basılabilir (printable) karakter olup
+                olmadığını kontrol eder. Basılabilir karakterler ASCII kod 32 ile 126 arasındadır ve klavye üzerinde
+                yazdırılabilir karakterlerin çoğunu temsil eder. Fonksiyon, verilen karakterin bu aralıkta olup
+                olmadığını kontrol eder. Eğer karakter yazdırılabilir ise 1; aksi halde 0 döner.</p>
+            <hr>
+
+            <h1 id="Notlar">Libft | Bilmen Gerekenler</h1>
+            <hr>
+
+            <h3>Malloc Nedir?</h3>
+            <p>malloc, bellekte dinamik olarak bellek ayırmak için kullanılan bir işlevdir. malloc, belirli bir
+                boyutta bellek bloğu ayırır ve bu bloğun başlangıç adresini döner. malloc, genellikle diziler,
+                yapılar veya diğer veri yapıları için bellek ayırmak için kullanılır.</p>
+
+            <!-- code -->
+            <section class="code-example">
+                <h3>💡 Örnek Kod:</h3>
+                <div class="code-block">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopyala</button>
+                    <pre><code>
+    int main() {
+        // 10 integer değeri için bellek tahsis et
+        int *ptr = (int *)malloc(10 * sizeof(int));
+    
+        // Bellek tahsisi başarılı mı kontrol et
+        if (ptr == NULL) {
+            printf("Bellek tahsis edilemedi!");
+            return -1;
+        }
+    
+        // Belleği kullan
+        for (int i = 0; i < 10; i++) {
+            ptr[i] = i * 2;
+            printf("%d ", ptr[i]);
+        }
+    
+        // Belleği serbest bırak
+        free(ptr);
+    
+        return 0;
+    }
+                    </code></pre>
+                </div>
+            </section>
+            <hr>
+
+            <h3>Calloc Nedir?</h3>
+            <p>calloc, bellekte dinamik olarak bellek ayırmak için kullanılan bir işlevdir. malloc ile benzer
+                şekilde çalışır, ancak calloc, ayırdığı belleği sıfırlarla başlatır. calloc, genellikle diziler,
+                yapılar veya diğer veri yapıları için bellek ayırmak için kullanılır.</p>
+            <hr>
+
+            <h3>Type Casting (Tür Dönüşümü) Nedir?</h3>
+            <p>Type casting, bir veri türünü başka bir veri türüne dönüştürme işlemidir. C dilinde, tür dönüşümü
+                genellikle iki şekilde yapılır: otomatik (implicit) ve açık (explicit) tür dönüşümü. Otomatik tür
+                dönüşümü, derleyici tarafından otomatik olarak yapılırken, açık tür dönüşümü, programcı tarafından
+                belirtilir.</p>
+            <!-- code -->
+            <section class="code-example">
+                <h3>💡 Örnek Kod:</h3>
+                <div class="code-block">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopyala</button>
+                    <pre><code>
+        int main() {
+            int a = 10;
+            double b;
+        
+            // int tipindeki a değişkenini double tipine dönüştürerek b'ye atadık
+            b = (double)a;
+        
+            printf("a: %d\n", a);
+            printf("b: %.2f\n", b);
+        
+            return 0;
+        }
+                    </code></pre>
+                </div>
+            </section>
+            <hr>
+
+            <h3>Overlap (Çakışma) Durumu Nedir?</h3>
+            <p>
+                Overlap durumu, iki veya daha fazla bellek alanının birbirini kapsadığı durumları ifade eder. Bu
+                durum, bellek yönetimi sırasında sorunlara yol açabilir. Örneğin, bir bellek bloğu üzerinde işlem
+                yaparken, başka bir bellek bloğunun üzerine yazılması gibi durumlar overlap olarak adlandırılır.
+            </p>
+            <!-- code -->
+            <section class="code-example">
+                <h3>💡 Örnek Kod:</h3>
+                <div class="code-block">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopyala</button>
+                    <pre><code>
+
+
+    // overlap fonksiyonu, iki dizinin çakışıp çakışmadığını kontrol eder
+    int overlap(int arr1[], int size1, int arr2[], int size2) {
+        // Birinci dizinin son elemanı ikinci dizinin ilk elemanından küçükse veya
+        // ikinci dizinin son elemanı birinci dizinin ilk elemanından küçükse çakışma yoktur
+        if (arr1[size1 - 1] < arr2[0] || arr2[size2 - 1] < arr1[0]) {
+            return 0; // Çakışma yok
+        } else {
+            return 1; // Çakışma var
+        }
+    }
+
+    int main() {
+        int arr1[] = {1, 2, 3, 4, 5};
+        int arr2[] = {4, 5, 6, 7, 8};
+    
+        int size1 = sizeof(arr1) / sizeof(arr1[0]);
+        int size2 = sizeof(arr2) / sizeof(arr2[0]);
+
+        if (overlap(arr1, size1, arr2, size2)) {
+            printf("Diziler çakışıyor.\n");
+        } else {
+            printf("Diziler çakışmıyor.\n");
+        }
+
+        return 0;
+    }
+                    </code></pre>
+                </div>
+            </section>
+            <hr>
+
+            <h3>Static Nedir?</h3>
+            <p>Static, bir değişkenin veya fonksiyonun kapsamını ve ömrünü belirleyen bir anahtar kelimedir. Static
+                değişkenler, yalnızca tanımlandıkları blok içinde geçerlidir ve programın çalışması boyunca bellekte
+                saklanır. Static fonksiyonlar ise yalnızca tanımlandıkları dosya içinde erişilebilir.</p>
+            <hr>
+
+            <h3>size_t Nedir?</h3>
+            <p>size_t, C dilinde bellek boyutunu temsil etmek için kullanılan bir veri türüdür. Genellikle
+                dizilerin boyutunu veya bellek tahsis işlemlerinde kullanılır. size_t, işaretçi aritmetiği ve
+                bellek yönetimi işlemlerinde güvenli bir şekilde kullanılabilir.</p>
             <hr>
 
             <!-- son eklenenler -->
