@@ -27,57 +27,122 @@
             </ul>
         </div>
         <header>
-            <h1>Lorem ipsum dolor sit.</h1>
+            <h1>42 - Libft</h1>
             <p class="meta">Yayın: 26 Mart 2025 | Yazar: Derya Acar</p>
             <!--<img src="https://via.placeholder.com/768x400.png?text=Blog+Görseli" alt="Blog görseli"
                 class="featured-img" />-->
         </header>
 
         <section>
-            <h2>42 - Libft</h2>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi similique exercitationem laborum enim
-                eaque accusamus harum aliquam.</p>
+            <p>`libft`, standart C kütüphanesindeki bazı temel işlevlerin nasıl çalıştığını anlamak için bir fırsat
+                sunar. Genellikle, bu işlevleri yeniden uygulamak ve kendi kütüphanenizi oluşturmak istenen temel bir
+                alıştırma olarak kullanılır. Bu işlevler, bellek işlemleri, dize manipülasyonu, karakter işlemleri ve
+                listeler gibi çeşitli alanlara yayılmıştır.</p>
 
-            <h2>Lorem, ipsum.</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum odit ipsam consequatur. Est vitae
-                mollitia libero saepe.</p>
+            <hr>
+            <h2>1 - Bellek İşlemleri</h2>
+            <hr>
 
-            <h3>Lorem, ipsum.</h3>
             <ul>
-                <li>Lorem, ipsum dolor.</li>
-                <li>Lorem, ipsum dolor.</li>
-                <li>Lorem, ipsum dolor.</li>
+                <li>
+                    <strong>ft_memset</strong>: Belleği belirli bir değerle doldurur.
+                    <ul>
+                        <li><strong>Prototype:</strong> <code>void *ft_memset(void *s, int c, size_t n);</code></li>
+                        <li><code>s</code>: Doldurulacak bellek bloğuna işaretçi.</li>
+                        <li><code>c</code>: Yerleştirilecek değer.</li>
+                        <li><code>n</code>: Belleğe yazılacak byte sayısı.</li>
+                        <li><strong>Dönüş Değeri:</strong> Bellek alanının başlangıcına işaret eden bir pointer.</li>
+                    </ul>
+                </li>
             </ul>
 
-            <blockquote>"Lorem ipsum dolor sit amet consectetur, adipisicing elit."</blockquote>
+            <section class="code-example">
+                <h3>💡 Örnek Kod: ft_memset Fonksiyonu</h3>
+                <div class="code-block">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopyala</button>
+                    <pre><code>
+    void	*ft_calloc(size_t count, size_t size)
+    {
+        void	*ptr;
+                
+        ptr = malloc(size * count);
+        if (!(ptr))
+            return (NULL);
+        ft_bzero(ptr, (count * size));
+        return (ptr);
+    }
+                  </code></pre>
+                </div>
+            </section>
 
-            <h2>Lorem, ipsum.</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum illo sequi earum, inventore recusandae
-                molestias perferendis aliquid!</p>
+            <hr>
 
-            <div class="tags">
-                <span class="tag">HTML</span>
-                <span class="tag">CSS</span>
-                <span class="tag">JavaScript</span>
-                <span class="tag">Frontend</span>
-            </div>
+            <ul>
+                <li>
+                    <strong>ft_bzero</strong>: Belleği sıfırlar.
+                    <ul>
+                        <li><strong>Prototype:</strong> <code>void ft_bzero(void *s, size_t n);</code></li>
+                        <li><code>s</code>: Sıfırlanacak bellek bloğunun başlangıç adresi.</li>
+                        <li><code>n</code>: Sıfırlanacak byte sayısı.</li>
+                        <li><strong>Dönüş Değeri:</strong> Yok (void). Sadece işlemi gerçekleştirir.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <section class="code-example">
+                <h3>💡 Örnek Kod: ft_bzero Fonksiyonu</h3>
+                <div class="code-block">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopyala</button>
+                    <pre><code>
+    void	ft_bzero(void *s, size_t n)
+    {
+        ft_memset(s, 0, n);
+    }
+                  </code></pre>
+                </div>
+            </section>
+            <p><strong>Açıklama:</strong> ft_memset işlevini çağırır ve bu işlev aracılığıyla bellek bloğunu 0 ile
+                doldurur. Yani,
+                ft_bzero aslında ft_memset fonksiyonunu çağırmakla görevlidir.
+            </p>
+            <hr>
+
+            <ul>
+                <li>
+                    <strong>ft_calloc:</strong>: Bellek tahsis eder ve sıfırlar.
+                    <ul>
+                        <li><strong>Prototype:</strong> <code>void *ft_calloc(size_t count, size_t size);</code></li>
+                        <li><code>count</code>: Tahsis edilecek öğe sayısı.</li>
+                        <li><code>size</code>: Her öğenin boyutu (byte cinsinden).</li>
+                        <li><strong>Dönüş Değeri:</strong> Tahsis edilen bellek bloğunun başlangıç adresini içeren bir
+                            işaretçi.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <section class="code-example">
+                <h3>💡 Örnek Kod: ft_bzero Fonksiyonu</h3>
+                <div class="code-block">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopyala</button>
+                    <pre><code>
+    void	*ft_calloc(size_t count, size_t size)
+    {
+        void	*ptr;
+                        
+        ptr = malloc(size * count);
+        if (!(ptr))
+                return (NULL);
+        ft_bzero(ptr, (count * size));
+        return (ptr);
+   }
+                  </code></pre>
+                </div>
+            </section>
+
+            <p><strong>Açıklama:</strong> ft_calloc, bellek tahsis eder ve ardından bu bellek alanını sıfırlar. Bu
+                işlev, genellikle dinamik bellek yönetimi için kullanılır.</p>
 
         </section>
-
-        <section class="code-example">
-            <h3>💡 Örnek Kod: JavaScript Fonksiyonu</h3>
-            <div class="code-block">
-                <button class="copy-btn" onclick="copyCode(this)">Kopyala</button>
-                <pre><code class="language-javascript">
-    function selamVer(isim) {
-        console.log("Merhaba, " + isim + "!");
-        }
-          
-    selamVer("Derya");
-              </code></pre>
-            </div>
-        </section>
-
 
         <section class="recent-posts">
             <h3>Son Eklenen Yazılar</h3>
@@ -88,6 +153,13 @@
                 <li><a href="#">🔗 GitHub Projelerinde Etkin Takip</a></li>
             </ul>
         </section>
+
+        <div class="tags">
+            <span class="tag">42</span>
+            <span class="tag">42 Ecole</span>
+            <span class="tag">Libft</span>
+            <span class="tag">C</span>
+        </div>
     </div>
 
     <!-- Footer Codes -->
