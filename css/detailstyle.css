@@ -1,11 +1,14 @@
 :root {
+    /* color */
     --bg: #121212;
     --text: #dddddd;
     --accent: #79ffe1;
     --tag-bg: #1f1f1f;
     --tag-text: #ccc;
 
+    /* font */
     --font-family: Arial, sans-serif;
+    --font-size: 16px;
 }
 
 * {
@@ -22,7 +25,7 @@ body {
     font-family: var(--font-family);
     background-color: var(--bg);
     color: var(--text);
-    line-height: 1.7;
+    line-height: 1.6;
     padding: 0;
 }
 
@@ -169,4 +172,19 @@ p {
 
 .copy-btn:hover {
     background-color: #555;
+}
+
+@media (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+
+    code {
+        font-size: 0.5rem;
+    }
+
+    .copy-btn {
+        font-size: 0.5rem;
+        padding: 0.3rem 0.5rem;
+    }
 }
