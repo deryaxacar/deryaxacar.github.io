@@ -14,7 +14,7 @@
     <div class="container">
         <!--menu-->
         <div class="hamburger-menu">
-            <input id="menu" type="checkbox" />
+            <input id="menu" type="checkbox" tabindex="-1" />
             <label class="menu-btn" for="menu">
                 <span></span>
             </label>
@@ -1480,15 +1480,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js"></script>
-    <script>
-        function copyCode(button) {
-            const code = button.nextElementSibling.innerText;
-            navigator.clipboard.writeText(code).then(() => {
-                button.innerText = "Kopyalandı!";
-                button.disabled = true;
-            });
-        }
-    </script>
+    <script src="js/detailscript.js"></script>
 
 
 </body>
