@@ -5,6 +5,13 @@
     --accent: #79ffe1;
     --tag-bg: #1f1f1f;
     --tag-text: #ccc;
+    --code-bg: #1e1e1e;
+    --code-text: #eee;
+    --color-gray: gray;
+    --color-white: #fff;
+    --color-black: #000;
+    --copy-btn-bg: #333;
+    --copy-btn-hover-bg: #555;
 
     /* font */
     --font-family: Arial, sans-serif;
@@ -39,7 +46,7 @@ header h1 {
 }
 
 .meta {
-    color: gray;
+    color: var(--color-gray);
     font-size: 0.9rem;
     margin-bottom: 1rem;
 }
@@ -50,6 +57,7 @@ header h1 {
     margin: 1.5rem 0;
 }
 
+/* header */
 h2 {
     margin-top: 1rem;
     color: var(--accent);
@@ -86,6 +94,7 @@ ul {
     margin-left: 1rem;
 }
 
+/* tags */
 .tags {
     margin-top: 2rem;
 }
@@ -129,13 +138,14 @@ p {
     color: var(--accent);
 }
 
+/* code box */
 .code-example {
     margin-top: 1rem;
 }
 
 .code-example pre {
-    background-color: #1e1e1e;
-    color: #eee;
+    background-color: var(--code-bg);
+    color: var(--code-text);
     border-radius: 8px;
     overflow-x: auto;
     font-family: 'Fira Code', monospace;
@@ -149,12 +159,13 @@ p {
     margin-top: 1rem;
 }
 
+/* copy button */
 .copy-btn {
     position: absolute;
     top: 10px;
     right: 10px;
-    background-color: #333;
-    color: #fff;
+    background-color: var(--copy-btn-bg);
+    color: var(--color-white);
     border: none;
     padding: 0.4rem 0.7rem;
     border-radius: 4px;
@@ -163,9 +174,10 @@ p {
 }
 
 .copy-btn:hover {
-    background-color: #555;
+    background-color: var(--copy-btn-hover-bg);
 }
 
+/* Media Screen */
 @media (max-width: 600px) {
     body {
         font-size: 14px;

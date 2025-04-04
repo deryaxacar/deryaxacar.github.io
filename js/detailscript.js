@@ -1,3 +1,6 @@
+// github : https://github.com/deryaxacar/Web-Page-Links
+
+// copy code button
 function copyCode(button) {
     const code = button.nextElementSibling.innerText;
     navigator.clipboard.writeText(code).then(() => {
@@ -6,9 +9,9 @@ function copyCode(button) {
     });
 }
 
+// menu checkbox
 document.querySelectorAll('.menu-box .menu-item').forEach(link => {
     link.addEventListener('click', () => {
-        // Link tıklandıktan hemen sonra checkbox’ı kapat
         document.getElementById('menu').checked = false;
     });
 });
