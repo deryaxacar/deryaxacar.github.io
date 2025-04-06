@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
   typeEffect();
 });
 
-const text = "Merhaba, ben Derya Acar, 21 yaşındayım. 2020’de başladığım yazılım yolculuğumda HTML, CSS, C, C++, JavaScript ve Bootstrap kullanarak projeler geliştirdim. 2023’ten bu yana dünyanın önde gelen kodlama okullarından 42 Ecole’de Eğitimime devam ediyor, aynı zamanda İstanbul Üniversitesi Web Tasarım ve Kodlama Ön Lisans programına katılıyorum. Yeni teknolojilere meraklı, sürekli öğrenmeye ve problem çözmeye odaklı bir yazılım tutkunu olarak kendimi geliştiriyorum. Bu web sayfasını, benim için önemli olan projeleri paylaşmak amacıyla oluşturdum. Umarım beğenirsiniz!";
+const text = "Merhaba! Ben Derya Acar, 21 yaşındayım. 2020’de yazılıma başladım ve HTML, CSS, C, C++, JavaScript, Bootstrap gibi teknolojilerle projeler geliştiriyorum. 2023’ten beri 42 Ecole’de eğitim alırken, İstanbul Üniversitesi Web Tasarım ve Kodlama Ön Lisans programına da devam ediyorum. Yeni teknolojilere meraklı ve çözüm odaklı bir yazılım tutkunu olarak bu sayfada blog yazılarımı paylaşıyorum. Umarım beğenirsiniz!";
 const container = document.getElementById("animated-text");
 
 function animateText() {

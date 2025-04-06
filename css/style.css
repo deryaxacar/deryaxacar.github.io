@@ -494,7 +494,7 @@ footer a {
     position: fixed;
     top: 0;
     left: -100%;
-    width: 200px;
+    width: 250px;
     height: 100%;
     margin: 0;
     padding: 80px 0;
@@ -511,7 +511,7 @@ footer a {
     color: var(--color-white);
     font-family: var(--font-family);
     font-size: 16px;
-    font-weight: 300;
+    font-weight: 250;
     text-decoration: none;
     transition-duration: .25s;
 }
