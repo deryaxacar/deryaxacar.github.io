@@ -175,6 +175,7 @@ p {
     border-radius: 4px;
     cursor: pointer;
     font-size: 0.8rem;
+    z-index: 2;
 }
 
 .copy-btn:hover {
